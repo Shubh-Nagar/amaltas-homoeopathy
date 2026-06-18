@@ -1,0 +1,200 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html, body, #root {
+  margin: 0;
+  padding: 0;
+  min-height: 100%;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* ─── Custom cursor (fine-pointer / desktop only) ─────────────────── */
+@media (pointer: fine) {
+  * { cursor: none !important; }
+
+  .cursor-dot {
+    position: fixed;
+    top: 0; left: 0;
+    width: 12px; height: 12px;
+    border-radius: 50%;
+    background: #C9A227;
+    pointer-events: none;
+    z-index: 9999;
+    will-change: transform;
+    transition: width 0.2s ease, height 0.2s ease, background 0.2s ease, opacity 0.2s ease;
+  }
+
+  .cursor-ring {
+    position: fixed;
+    top: 0; left: 0;
+    width: 40px; height: 40px;
+    border-radius: 50%;
+    border: 1.5px solid rgba(201,162,39,0.55);
+    pointer-events: none;
+    z-index: 9998;
+    will-change: transform;
+    transition: width 0.25s ease, height 0.25s ease, border-color 0.25s ease, background 0.25s ease;
+  }
+
+  .cursor-dot[data-hover="link"] {
+    width: 8px; height: 8px;
+    background: #A37A14;
+  }
+  .cursor-ring[data-hover="link"] {
+    width: 54px; height: 54px;
+    border-color: rgba(201,162,39,0.85);
+    background: rgba(201,162,39,0.07);
+  }
+
+  .cursor-dot[data-hover="image"] {
+    width: 16px; height: 16px;
+    background: rgba(201,162,39,0.75);
+  }
+  .cursor-ring[data-hover="image"] {
+    width: 62px; height: 62px;
+    border-color: rgba(168,237,202,0.65);
+  }
+}
+
+/* ─── Scrollbar ───────────────────────────────────────────────────── */
+::-webkit-scrollbar { width: 5px; }
+::-webkit-scrollbar-track { background: #050d06; }
+::-webkit-scrollbar-thumb { background: #C9A227; border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: #A37A14; }
+
+/* ─── Keyframes ───────────────────────────────────────────────────── */
+
+/* Facilities slider progress bar */
+@keyframes amaltasSlideProgress {
+  from { transform: scaleX(0); }
+  to   { transform: scaleX(1); }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(36px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* Pulse dot — live indicator badges */
+@keyframes pulseDot {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50%       { opacity: 0.35; transform: scale(1.6); }
+}
+
+/* Floating card gentle levitation */
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50%       { transform: translateY(-10px); }
+}
+
+/* Scroll indicator bounce */
+@keyframes scrollBounce {
+  0%, 100% { transform: translateY(0); opacity: 0.8; }
+  50%       { transform: translateY(10px); opacity: 0.2; }
+}
+
+/* Word-by-word reveal */
+@keyframes wordReveal {
+  from { opacity: 0; transform: translateY(10px); filter: blur(4px); }
+  to   { opacity: 1; transform: translateY(0);   filter: blur(0); }
+}
+
+/* Loading bloom petals */
+@keyframes bloomPetal {
+  from { opacity: 0; transform-box: fill-box; transform: scale(0.2); }
+  to   { opacity: 0.92; transform-box: fill-box; transform: scale(1); }
+}
+
+/* Loading progress bar */
+@keyframes loadingBar {
+  from { transform: scaleX(0); }
+  to   { transform: scaleX(1); }
+}
+
+/* Loading screen exit */
+@keyframes loadingExit {
+  from { opacity: 1; }
+  to   { opacity: 0; }
+}
+
+/* Heartbeat — logo easter egg */
+@keyframes heartbeat {
+  0%  { transform: scale(1); }
+  14% { transform: scale(1.1); }
+  28% { transform: scale(1); }
+  42% { transform: scale(1.07); }
+  70% { transform: scale(1); }
+}
+
+/* Halo ring rotation */
+@keyframes haloSpin {
+  from { stroke-dashoffset: 280; }
+  to   { stroke-dashoffset: 0; }
+}
+
+/* Signature draw */
+@keyframes signatureDraw {
+  from { stroke-dashoffset: 400; opacity: 0; }
+  to   { stroke-dashoffset: 0;   opacity: 1; }
+}
+
+/* ─── Glass panel ─────────────────────────────────────────────────── */
+.glass-panel {
+  background: rgba(240,249,244,0.05);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(240,249,244,0.1);
+}
+
+/* ─── Scroll reveal (JS adds .in-view) ───────────────────────────── */
+.reveal {
+  opacity: 0;
+  transform: translateY(38px);
+  transition: opacity 0.85s cubic-bezier(0.22,1,0.36,1),
+              transform 0.85s cubic-bezier(0.22,1,0.36,1);
+}
+.reveal.in-view {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.reveal-left {
+  opacity: 0;
+  transform: translateX(-40px);
+  transition: opacity 0.85s cubic-bezier(0.22,1,0.36,1),
+              transform 0.85s cubic-bezier(0.22,1,0.36,1);
+}
+.reveal-left.in-view {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* ─── Center-outward underline (footer links) ────────────────────── */
+.link-center {
+  position: relative;
+}
+.link-center::after {
+  content: '';
+  position: absolute;
+  bottom: -1px;
+  left: 50%; right: 50%;
+  height: 1px;
+  background: #C9A227;
+  transition: left 0.3s ease, right 0.3s ease;
+}
+.link-center:hover::after {
+  left: 0; right: 0;
+}
