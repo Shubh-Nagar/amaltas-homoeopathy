@@ -9,7 +9,7 @@ import Eyebrow from '../ui/Eyebrow';
 import useInView from '../../hooks/useInView';
 
 const MONO = { fontFamily: "'DM Mono', 'Courier New', monospace" };
-
+//hello test
 const PILLARS = [
   {
     icon: Heart,
