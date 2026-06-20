@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { GraduationCap, BookOpen, Filter, Users } from 'lucide-react';
+import { GraduationCap, Filter } from 'lucide-react';
 import { T, fontDisplay, fontBody } from '../../styles/tokens';
 import Container from '../ui/Container';
 import Eyebrow from '../ui/Eyebrow';
@@ -8,45 +8,60 @@ import useInView from '../../hooks/useInView';
 const MONO = { fontFamily: "'DM Mono', 'Courier New', monospace" };
 
 const FACULTY = [
-  { sn: 1,  name: 'Dr. Yogendra Singh Bhadoriya', designation: 'Principal / Medical Superintendent', dept: 'Administration',                                          doj: '22-02-2022' },
-  { sn: 2,  name: 'Dr. Mukesh Agrawal',           designation: 'Professor',                          dept: 'Human Anatomy',                                          doj: '16-09-2024' },
-  { sn: 3,  name: 'Dr. Om N. Tamrakar',           designation: 'Professor',                          dept: 'Repertory',                                              doj: '20-09-2024' },
-  { sn: 4,  name: 'Dr. Jyoti Sharma (Mistry)',    designation: 'Professor',                          dept: 'Homoeopathic Materia Medica',                            doj: '16-09-2024' },
-  { sn: 5,  name: 'Dr. Pawan Kumar Tamrakar',     designation: 'Professor',                          dept: 'Organon of Medicine & Homoeopathic Philosophy',          doj: '02-05-2025' },
-  { sn: 6,  name: 'Dr. Harish Kumar Tuli',        designation: 'Professor',                          dept: 'Human Physiology & Biochemistry',                        doj: '02-01-2026' },
-  { sn: 7,  name: 'Dr. Sushila Singh',            designation: 'Professor',                          dept: 'Homoeopathic Pharmacy',                                  doj: '09-12-2025' },
-  { sn: 8,  name: 'Dr. Sunil Chandel',            designation: 'Professor',                          dept: 'Pathology & Microbiology',                               doj: '14-01-2026' },
-  { sn: 9,  name: 'Dr. Mahendra Pratap',          designation: 'Associate Professor',                dept: 'Human Physiology & Biochemistry',                        doj: '17-02-2025' },
-  { sn: 10, name: 'Dr. Shilpa Singh (Bais)',      designation: 'Associate Professor',                dept: 'Homoeopathic Materia Medica',                            doj: '17-09-2024' },
-  { sn: 11, name: 'Dr. Shehla Jaffri',            designation: 'Associate Professor',                dept: 'Repertory',                                              doj: '06-03-2023' },
-  { sn: 12, name: 'Dr. Vinay Patidar',            designation: 'Associate Professor',                dept: 'Practice of Medicine & Pharmacology',                    doj: '03-11-2025' },
-  { sn: 13, name: 'Dr. Rajesh Mangroliya',        designation: 'Associate Professor',                dept: 'Pathology & Microbiology',                               doj: '16-03-2026' },
-  { sn: 14, name: 'Dr. Palak Chouksey',           designation: 'Assistant Professor',                dept: 'Human Anatomy',                                          doj: '14-09-2024' },
-  { sn: 15, name: 'Dr. Damini Solanki',           designation: 'Assistant Professor',                dept: 'Organon of Medicine & Homoeopathic Philosophy',          doj: '16-09-2024' },
-  { sn: 16, name: 'Dr. Ankit Sharma',             designation: 'Assistant Professor',                dept: 'Repertory',                                              doj: '16-09-2024' },
-  { sn: 17, name: 'Dr. Vibha Patankar',           designation: 'Assistant Professor',                dept: 'Repertory',                                              doj: '14-09-2024' },
-  { sn: 18, name: 'Dr. Rajkumar Soni',            designation: 'Assistant Professor',                dept: 'Human Physiology & Biochemistry',                        doj: '21-02-2025' },
-  { sn: 19, name: 'Dr. Dharmendra Kourav',        designation: 'Assistant Professor',                dept: 'Human Anatomy',                                          doj: '12-02-2026' },
-  { sn: 20, name: 'Dr. Neha Jain',               designation: 'Assistant Professor',                dept: 'Homoeopathic Materia Medica',                            doj: '28-04-2025' },
-  { sn: 21, name: 'Dr. Ananya Jaiswal',           designation: 'Assistant Professor',                dept: 'Human Physiology & Biochemistry',                        doj: '19-09-2025' },
-  { sn: 22, name: 'Dr. Preeti Rai',              designation: 'Assistant Professor',                dept: 'Homoeopathic Pharmacy',                                  doj: '19-09-2025' },
-  { sn: 23, name: 'Dr. Pragya Jain',             designation: 'Assistant Professor',                dept: 'Surgery',                                                doj: '02-03-2026' },
-  { sn: 24, name: 'Dr. Shahana Khan',            designation: 'Assistant Professor',                dept: 'Gynaecology & Obstetrics',                               doj: '02-03-2026' },
-  { sn: 25, name: 'Dr. Geeta Vishnariya',        designation: 'Assistant Professor',                dept: 'Forensic Medicine & Toxicology',                         doj: '28-02-2026' },
-  { sn: 26, name: 'Dr. Deeksha Vishwakarma',     designation: 'Assistant Professor',                dept: 'Pathology & Microbiology',                               doj: '20-03-2026' },
+  { sn: 1,  name: 'Dr. Yogendra Bhadoriya',          designation: 'Principal / Medical Superintendent', dept: 'Administration',                                qual: 'MD',  doj: '22-02-2022' },
+  { sn: 2,  name: 'Dr. Mukesh Agrawal',              designation: 'Professor',                          dept: 'Human Anatomy',                                 qual: 'MD',  doj: '17-09-2024' },
+  { sn: 3,  name: 'Dr. Om Narayan Tamrakar',         designation: 'Professor',                          dept: 'Repertory',                                     qual: 'MD',  doj: '20-09-2024' },
+  { sn: 4,  name: 'Dr. Jyoti Sharma (Mistry)',       designation: 'Professor',                          dept: 'Homoeopathic Materia Medica',                   qual: 'MD',  doj: '16-09-2024' },
+  { sn: 5,  name: 'Dr. Pawan Kumar Tamrakar',        designation: 'Professor',                          dept: 'Organon of Medicine & Homoeopathic Philosophy', qual: 'MD',  doj: '02-05-2025' },
+  { sn: 6,  name: 'Dr. Tanuja Bordia',               designation: 'Professor',                          dept: 'Organon of Medicine & Homoeopathic Philosophy', qual: 'MD',  doj: '14-04-2026' },
+  { sn: 7,  name: 'Dr. Harish Kumar Tuli',           designation: 'Professor',                          dept: 'Human Physiology & Biochemistry',               qual: 'MD',  doj: '02-01-2026' },
+  { sn: 8,  name: 'Dr. Sushila Singh',               designation: 'Professor',                          dept: 'Homoeopathic Pharmacy',                         qual: 'MD',  doj: '09-12-2025' },
+  { sn: 9,  name: 'Dr. Sunil Chandel',               designation: 'Professor',                          dept: 'Pathology & Microbiology',                      qual: 'MD',  doj: '14-01-2026' },
+  { sn: 10, name: 'Dr. Amit Kumar Yadav',            designation: 'Professor',                          dept: 'Forensic Medicine & Toxicology',                qual: 'MD',  doj: '13-04-2026' },
+  { sn: 11, name: 'Dr. Girish Malviya',              designation: 'Professor',                          dept: 'Surgery',                                       qual: 'MS',  doj: '02-05-2026' },
+  { sn: 12, name: 'Dr. Niyati Arpan Shah',           designation: 'Professor',                          dept: 'Gynaecology & Obstetrics',                      qual: 'MS',  doj: '02-05-2026' },
+  { sn: 13, name: 'Dr. Vibha Choure',                designation: 'Professor',                          dept: 'Practice of Medicine & Pharmacology',           qual: 'MD',  doj: '02-06-2026' },
+  { sn: 14, name: 'Dr. Mahendra Pratap',             designation: 'Associate Professor',                dept: 'Human Physiology & Biochemistry',               qual: 'MD',  doj: '17-02-2025' },
+  { sn: 15, name: 'Dr. Shilpa Bais',                 designation: 'Associate Professor',                dept: 'Homoeopathic Materia Medica',                   qual: 'MD',  doj: '17-09-2024' },
+  { sn: 16, name: 'Dr. Shehla Jaffri',               designation: 'Associate Professor',                dept: 'Repertory',                                     qual: 'MD',  doj: '06-03-2025' },
+  { sn: 17, name: 'Dr. Vinay Patidar',               designation: 'Associate Professor',                dept: 'Practice of Medicine & Pharmacology',           qual: 'MD',  doj: '03-11-2025' },
+  { sn: 18, name: 'Dr. Rajesh Mangroliya',           designation: 'Associate Professor',                dept: 'Pathology & Microbiology',                      qual: 'MD',  doj: '16-03-2026' },
+  { sn: 19, name: 'Dr. Dinesh Kumar Jairaj',         designation: 'Associate Professor',                dept: 'Human Anatomy',                                 qual: 'PhD', doj: '25-03-2026' },
+  { sn: 20, name: 'Dr. Alluri Rajyalaxmi',           designation: 'Associate Professor',                dept: 'Gynaecology & Obstetrics',                      qual: 'MS',  doj: '04-05-2026' },
+  { sn: 21, name: 'Dr. Satish Thakur',               designation: 'Associate Professor',                dept: 'Surgery',                                       qual: 'MS',  doj: '02-05-2026' },
+  { sn: 22, name: 'Dr. Neha Rajput',                 designation: 'Associate Professor',                dept: 'Forensic Medicine & Toxicology',                qual: 'MD',  doj: '12-06-2026' },
+  { sn: 23, name: 'Dr. Palak Chouksey',              designation: 'Assistant Professor',                dept: 'Human Anatomy',                                 qual: 'MD',  doj: '14-09-2024' },
+  { sn: 24, name: 'Dr. Damini Solanki',              designation: 'Assistant Professor',                dept: 'Organon of Medicine & Homoeopathic Philosophy', qual: 'MD',  doj: '16-09-2024' },
+  { sn: 25, name: 'Dr. Ankit Sharma',                designation: 'Assistant Professor',                dept: 'Repertory',                                     qual: 'MD',  doj: '16-09-2024' },
+  { sn: 26, name: 'Dr. Vibha Patankar',              designation: 'Assistant Professor',                dept: 'Repertory',                                     qual: 'MD',  doj: '14-09-2024' },
+  { sn: 27, name: 'Dr. Rajkumar Soni',               designation: 'Assistant Professor',                dept: 'Human Physiology & Biochemistry',               qual: 'MSc', doj: '21-02-2025' },
+  { sn: 28, name: 'Dr. Dharmendra Kourav',           designation: 'Assistant Professor',                dept: 'Human Anatomy',                                 qual: 'MSc', doj: '12-02-2026' },
+  { sn: 29, name: 'Dr. Neha Jain',                   designation: 'Assistant Professor',                dept: 'Homoeopathic Materia Medica',                   qual: 'MD',  doj: '28-04-2025' },
+  { sn: 30, name: 'Dr. Ananya Jaiswal',              designation: 'Assistant Professor',                dept: 'Human Physiology & Biochemistry',               qual: 'MD',  doj: '19-09-2025' },
+  { sn: 31, name: 'Dr. Preeti Rai',                  designation: 'Assistant Professor',                dept: 'Homoeopathic Pharmacy',                         qual: 'MD',  doj: '19-09-2025' },
+  { sn: 32, name: 'Dr. Pragya Jain',                 designation: 'Assistant Professor',                dept: 'Surgery',                                       qual: 'MD',  doj: '02-03-2026' },
+  { sn: 33, name: 'Dr. Shahana Khan',                designation: 'Assistant Professor',                dept: 'Practice of Medicine & Pharmacology',           qual: 'MD',  doj: '12-05-2026' },
+  { sn: 34, name: 'Dr. Geeta Vishnariya',            designation: 'Assistant Professor',                dept: 'Forensic Medicine & Toxicology',                qual: 'MD',  doj: '28-02-2026' },
+  { sn: 35, name: 'Dr. Deeksha Vishwakarma',         designation: 'Assistant Professor',                dept: 'Pathology & Microbiology',                      qual: 'MD',  doj: '20-03-2026' },
+  { sn: 36, name: 'Dr. Praveen Narayan Mishra',      designation: 'Assistant Professor',                dept: 'Organon of Medicine & Homoeopathic Philosophy', qual: 'MD',  doj: '06-04-2026' },
+  { sn: 37, name: 'Dr. Bera Mihirkumar Bharatbhai',  designation: 'Assistant Professor',                dept: 'Practice of Medicine & Pharmacology',           qual: 'MD',  doj: '01-05-2026' },
+  { sn: 38, name: 'Dr. Gautam Thakur',               designation: 'Assistant Professor',                dept: 'Practice of Medicine & Pharmacology',           qual: 'MD',  doj: '04-05-2026' },
+  { sn: 39, name: 'Dr. Iti Goyal',                   designation: 'Assistant Professor',                dept: 'Homoeopathic Materia Medica',                   qual: 'MD',  doj: '11-05-2026' },
+  { sn: 40, name: 'Dr. Shweta Singh',                designation: 'Assistant Professor',                dept: 'Gynaecology & Obstetrics',                      qual: 'MD',  doj: '11-05-2026' },
+  { sn: 41, name: 'Dr. Shahana Shah',                designation: 'Assistant Professor',                dept: 'Pathology & Microbiology',                      qual: 'MD',  doj: '30-05-2026' },
 ];
 
 const DESIGNATION_FILTERS = ['All', 'Principal / Medical Superintendent', 'Professor', 'Associate Professor', 'Assistant Professor'];
 
 const DESIG_META = {
-  'Principal / Medical Superintendent': { bg: `${T.gold600}18`,   border: `${T.gold600}40`,   text: T.gold700,    rank: 1 },
-  'Professor':                           { bg: `${T.forest800}12`, border: `${T.forest800}30`, text: T.forest800,  rank: 2 },
-  'Associate Professor':                 { bg: `${T.forest600}12`, border: `${T.forest600}30`, text: T.forest600,  rank: 3 },
-  'Assistant Professor':                 { bg: '#2E6A8A12',         border: '#2E6A8A30',         text: '#2E6A8A',    rank: 4 },
+  'Principal / Medical Superintendent': { bg: `${T.gold600}18`,   border: `${T.gold600}40`,   text: T.gold700,   rank: 1 },
+  'Professor':                           { bg: `${T.forest800}12`, border: `${T.forest800}30`, text: T.forest800, rank: 2 },
+  'Associate Professor':                 { bg: `${T.forest600}12`, border: `${T.forest600}30`, text: T.forest600, rank: 3 },
+  'Assistant Professor':                 { bg: '#2E6A8A12',         border: '#2E6A8A30',         text: '#2E6A8A',   rank: 4 },
 };
 
 const DEPT_COLORS = {
-  'Administration':                               '#C9A227',
+  'Administration':                               T.gold700,
   'Human Anatomy':                                '#2E6A8A',
   'Repertory':                                    '#0A5326',
   'Homoeopathic Materia Medica':                  '#8A4A6E',
@@ -57,14 +72,14 @@ const DEPT_COLORS = {
   'Practice of Medicine & Pharmacology':          '#6B7872',
   'Surgery':                                      '#C0392B',
   'Gynaecology & Obstetrics':                     '#8A4A6E',
-  'Forensic Medicine & Toxicology':               '#444',
+  'Forensic Medicine & Toxicology':               '#444444',
 };
 
 const STATS = [
-  { value: '26',  label: 'Faculty Members' },
-  { value: '7',   label: 'Professors' },
-  { value: '5',   label: 'Associate Professors' },
-  { value: '12',  label: 'Departments' },
+  { value: '41', label: 'Faculty Members' },
+  { value: '12', label: 'Professors' },
+  { value: '9',  label: 'Associate Professors' },
+  { value: '12', label: 'Departments' },
 ];
 
 const slide = (inView, delay = 0) => ({
@@ -104,29 +119,16 @@ export default function TeachingFacultySection() {
   return (
     <>
       {/* ═══════════════════════════  HERO  ═══════════════════════════ */}
-      <section
-        className="relative overflow-hidden"
-        style={{ minHeight: 380, background: T.forest800 }}
-      >
+      <section className="relative overflow-hidden" style={{ minHeight: 380, background: T.forest800 }}>
         <img
           src="/campus/homoepathy.png"
           alt="Amaltas Institute"
-          style={{
-            position: 'absolute', inset: 0,
-            width: '100%', height: '100%',
-            objectFit: 'cover', objectPosition: 'center 35%',
-            opacity: 0.22,
-          }}
+          style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center 35%', opacity: 0.22 }}
           draggable="false"
         />
         <div style={{ position: 'absolute', inset: 0, background: `linear-gradient(135deg, ${T.forest800}EE 0%, ${T.ink900}BB 100%)` }} />
-        <div
-          style={{
-            position: 'absolute', inset: 0,
-            backgroundImage: `radial-gradient(circle, ${T.gold600}18 1px, transparent 1px)`,
-            backgroundSize: '36px 36px', pointerEvents: 'none',
-          }}
-        />
+        <div style={{ position: 'absolute', inset: 0, backgroundImage: `radial-gradient(circle, ${T.gold600}18 1px, transparent 1px)`, backgroundSize: '36px 36px', pointerEvents: 'none' }} />
+
         <Container className="relative flex flex-col items-center justify-center text-center py-20 lg:py-28">
           <div ref={heroRef}>
             <div style={slide(heroInView, 0)}><Eyebrow light>Academics</Eyebrow></div>
@@ -208,7 +210,6 @@ export default function TeachingFacultySection() {
             </div>
             {DESIGNATION_FILTERS.map(des => {
               const isActive = filter === des;
-              const meta = des !== 'All' ? DESIG_META[des] : null;
               return (
                 <button
                   key={des}
@@ -254,7 +255,7 @@ export default function TeachingFacultySection() {
                 ...MONO,
                 background: T.forest800,
                 color: `${T.cream50}88`,
-                gridTemplateColumns: '3rem 1.6fr 1.1fr 1.4fr 7rem',
+                gridTemplateColumns: '3rem 1.6fr 1.2fr 1.4fr 5rem 7rem',
                 gap: '0 1.5rem',
               }}
             >
@@ -262,6 +263,7 @@ export default function TeachingFacultySection() {
               <span>Name</span>
               <span>Designation</span>
               <span>Department</span>
+              <span>Qual.</span>
               <span>Joined</span>
             </div>
 
@@ -274,26 +276,23 @@ export default function TeachingFacultySection() {
                   key={f.sn}
                   className="grid items-center px-6 py-4 transition-colors duration-150"
                   style={{
-                    gridTemplateColumns: '3rem 1.6fr 1.1fr 1.4fr 7rem',
+                    gridTemplateColumns: '3rem 1.6fr 1.2fr 1.4fr 5rem 7rem',
                     gap: '0 1.5rem',
                     background: i % 2 === 0 ? '#FFFFFF' : `${T.forest800}04`,
                     borderTop: `1px solid ${T.ink900}08`,
                   }}
-                  onMouseEnter={e => { e.currentTarget.style.background = T.goldFog; }}
+                  onMouseEnter={e => { e.currentTarget.style.background = `${T.gold600}08`; }}
                   onMouseLeave={e => { e.currentTarget.style.background = i % 2 === 0 ? '#FFFFFF' : `${T.forest800}04`; }}
                 >
-                  {/* Sn */}
                   <span className="text-[12px] font-semibold" style={{ ...MONO, color: T.muted500 }}>
                     {String(f.sn).padStart(2, '0')}
                   </span>
 
-                  {/* Name + avatar */}
                   <div className="flex items-center gap-3">
                     <Avatar name={f.name} designation={f.designation} />
                     <span className="text-[14px] font-medium leading-snug" style={{ color: T.ink900 }}>{f.name}</span>
                   </div>
 
-                  {/* Designation badge */}
                   <span
                     className="inline-flex items-center px-2.5 py-0.5 rounded-full text-[11px] font-medium w-fit"
                     style={{ background: meta.bg, border: `1px solid ${meta.border}`, color: meta.text }}
@@ -301,16 +300,13 @@ export default function TeachingFacultySection() {
                     {f.designation}
                   </span>
 
-                  {/* Department */}
                   <div className="flex items-center gap-2">
-                    <span
-                      className="w-2 h-2 rounded-full flex-shrink-0"
-                      style={{ background: deptClr }}
-                    />
+                    <span className="w-2 h-2 rounded-full flex-shrink-0" style={{ background: deptClr }} />
                     <span className="text-[13px] leading-snug" style={{ color: T.muted500 }}>{f.dept}</span>
                   </div>
 
-                  {/* Date */}
+                  <span className="text-[12px] font-semibold" style={{ ...MONO, color: T.muted500 }}>{f.qual}</span>
+
                   <span className="text-[12px]" style={{ ...MONO, color: T.muted500 }}>{f.doj}</span>
                 </div>
               );
@@ -338,7 +334,7 @@ export default function TeachingFacultySection() {
                     <div className="flex-1 min-w-0">
                       <div className="flex items-start justify-between gap-2">
                         <p className="text-[14px] font-semibold leading-snug" style={{ color: T.ink900 }}>{f.name}</p>
-                        <span className="text-[10px] flex-shrink-0" style={{ ...MONO, color: T.muted500 }}>{f.doj}</span>
+                        <span className="text-[10px] flex-shrink-0" style={{ ...MONO, color: T.muted500 }}>{f.qual}</span>
                       </div>
                       <span
                         className="inline-flex items-center mt-1.5 px-2 py-0.5 rounded-full text-[11px] font-medium"
@@ -350,6 +346,7 @@ export default function TeachingFacultySection() {
                         <span className="w-2 h-2 rounded-full flex-shrink-0" style={{ background: deptClr }} />
                         {f.dept}
                       </div>
+                      <p className="mt-1.5 text-[11px]" style={{ ...MONO, color: `${T.muted500}99` }}>Joined {f.doj}</p>
                     </div>
                   </div>
                 </div>
@@ -357,7 +354,6 @@ export default function TeachingFacultySection() {
             })}
           </div>
 
-          {/* Row count */}
           <p className="mt-5 text-[12px]" style={{ ...MONO, color: T.muted500, letterSpacing: '0.08em' }}>
             Showing {filtered.length} of {FACULTY.length} faculty members
             {filter !== 'All' && ` · ${filter}`}
@@ -367,24 +363,12 @@ export default function TeachingFacultySection() {
 
       {/* ═════════════════════  CLOSING STRIP  ════════════════════════ */}
       <section className="py-16 relative overflow-hidden" style={{ background: T.forest800 }}>
-        <div
-          style={{
-            position: 'absolute', inset: 0,
-            backgroundImage: `radial-gradient(circle, ${T.gold600}12 1px, transparent 1px)`,
-            backgroundSize: '40px 40px', pointerEvents: 'none',
-          }}
-        />
+        <div style={{ position: 'absolute', inset: 0, backgroundImage: `radial-gradient(circle, ${T.gold600}12 1px, transparent 1px)`, backgroundSize: '40px 40px', pointerEvents: 'none' }} />
         <Container className="relative text-center">
-          <div
-            className="w-14 h-14 rounded-full flex items-center justify-center mx-auto mb-5"
-            style={{ background: `${T.gold100}18`, border: `1px solid ${T.gold100}30` }}
-          >
+          <div className="w-14 h-14 rounded-full flex items-center justify-center mx-auto mb-5" style={{ background: `${T.gold100}18`, border: `1px solid ${T.gold100}30` }}>
             <GraduationCap size={22} strokeWidth={1.6} style={{ color: T.gold100 }} />
           </div>
-          <p
-            className="text-[22px] sm:text-[28px] font-semibold max-w-2xl mx-auto leading-snug"
-            style={{ ...fontDisplay, color: '#FFFFFF' }}
-          >
+          <p className="text-[22px] sm:text-[28px] font-semibold max-w-2xl mx-auto leading-snug" style={{ ...fontDisplay, color: '#FFFFFF' }}>
             Every faculty member is{' '}
             <em style={{ color: T.gold100, fontStyle: 'italic' }}>NCH-qualified</em>
             {' '}and dedicated to clinical excellence in teaching.

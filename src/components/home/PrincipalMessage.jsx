@@ -153,7 +153,7 @@ const PrincipalMessage = () => {
                   boxShadow:  '0 16px 36px -10px rgba(0,0,0,0.35)',
                 }}
               >
-                <div style={{ ...MONO, fontSize: 10, letterSpacing: '0.2em', textTransform: 'uppercase', color: T.muted500 }}>
+                <div style={{ ...MONO, fontSize: 13, letterSpacing: '0.15em', textTransform: 'uppercase', color: T.muted500 }}>
                   {principal.role}
                 </div>
                 <div style={{ ...fontDisplay, fontSize: 15, fontWeight: 600, marginTop: 3, lineHeight: 1.3 }}>
@@ -191,7 +191,7 @@ const PrincipalMessage = () => {
               <div className="flex items-center gap-4">
                 <span className="block w-10 h-px" style={{ background: T.gold600 }} />
                 <a
-                  href="#principal-full"
+                  href="/about/principal-message"
                   className="text-[13px] tracking-[0.2em] uppercase font-medium flex items-center gap-2 transition-opacity hover:opacity-75"
                   style={{ color: T.gold100 }}
                 >

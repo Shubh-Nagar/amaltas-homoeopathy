@@ -87,7 +87,7 @@ export const FOOTER_LINKS = {
 export const CONTACT = {
   address: 'Village Bangar, Dewas–Ujjain Highway, District Dewas, MP — 455001',
   tollFree: '1800-571-2113',
-  phone: '9650096850',
+  phone: '9685096500',
   email: 'homoeopathy@amaltasgroup.co.in',
 };
 
@@ -102,7 +102,7 @@ export const LEADERSHIP = [
     name: 'Shri Suresh Singh Bhadoria',
     role: 'Founder',
     image: '/leadership/suresh-sir.jpeg',
-    href: '#director',
+    href: '/about/founder-message',
     blurb:
       'Founded Amaltas on a vision of ethical homoeopathic education — building physicians who serve communities across India.',
     message:
@@ -113,7 +113,7 @@ export const LEADERSHIP = [
     name: 'Shri Mayankraj S. Bhadoria',
     role: 'Chairman',
     image: '/leadership/chairman.jpg',
-    href: '#chairman',
+    href: '/about/chairman-message',
     blurb:
       'Steering the Amaltas Group with a vision of accessible, ethical, and excellence-driven medical education across central India.',
   },
@@ -122,7 +122,7 @@ export const LEADERSHIP = [
     name: 'Dr. Yogendra Singh Bhadoria',
     role: 'Principal & Medical Superintendent',
     image: '/leadership/principal.jpg',
-    href: '#principal',
+    href: '/about/principal-message',
     blurb:
       "Guiding the institute's daily academic and clinical life, with a commitment to homoeopathy practised in its truest, classical form.",
     quote:
@@ -138,14 +138,14 @@ export const CAMPUS_SLIDES = [
   {
     image: '/campus/campus.jpg',
     tag: 'Our Campus',
-    title: 'The Amaltas Institute, Dewas',
+    title: 'Amaltas Institute of Homoeopathy Hospital & Research Center',
     description:
       'Purpose-built infrastructure on the Dewas–Ujjain Highway, set within the wider 27-acre Amaltas Group campus.',
   },
   {
     image: '/campus/teaching.png',
     tag: 'Teaching Hospital',
-    title: 'Amaltas Hospital & Research Centre',
+    title: 'Excellent Teaching Faculty',
     description:
       'Our fully operational multi-speciality teaching hospital gives BHMS students hands-on patient exposure from the very first clinical year.',
   },
