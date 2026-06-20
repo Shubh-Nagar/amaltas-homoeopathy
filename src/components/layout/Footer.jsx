@@ -1,8 +1,27 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import { Facebook, Instagram, MapPin, Phone, Mail, Check } from 'lucide-react';
 import { T } from '../../styles/tokens';
 import { FOOTER_LINKS, CONTACT } from '../../data/navigation';
 import Container from '../ui/Container';
+
+const isFile = (href) => href && /\.(pdf|doc|docx|xls|xlsx)$/i.test(href);
+
+const FooterLink = ({ href, target, children, className }) => {
+  if (!href || href === '#' || isFile(href) || href.startsWith('http')) {
+    return (
+      <a
+        href={href || '#'}
+        target={target}
+        rel={target === '_blank' ? 'noopener noreferrer' : undefined}
+        className={className}
+      >
+        {children}
+      </a>
+    );
+  }
+  return <Link to={href} className={className}>{children}</Link>;
+};
 
 const MONO = { fontFamily: "'DM Mono', 'Courier New', monospace" };
 
@@ -82,12 +101,14 @@ const Footer = () => (
         {/* Social links */}
         <div className="flex items-center gap-3 pt-2">
           {[
-            { Icon: Facebook,  label: 'Facebook'  },
-            { Icon: Instagram, label: 'Instagram' },
-          ].map(({ Icon, label }) => (
+            { Icon: Facebook,  label: 'Facebook',  href: 'https://www.facebook.com/amaltasinstituteofhomoeopathy/' },
+            { Icon: Instagram, label: 'Instagram', href: 'https://www.instagram.com/amaltasinstituteofhomoeopathy/' },
+          ].map(({ Icon, label, href }) => (
             <a
               key={label}
-              href="#"
+              href={href}
+              target="_blank"
+              rel="noopener noreferrer"
               aria-label={label}
               className="w-9 h-9 rounded-full flex items-center justify-center transition-all duration-300 hover:scale-110"
               style={{
@@ -113,9 +134,9 @@ const Footer = () => (
           Quick Links
         </div>
         <ul className="space-y-3 text-[14px]" style={{ color: `${T.cream50}85` }}>
-          {FOOTER_LINKS.quickLinks.map((l) => (
-            <li key={l}>
-              <a href="#" className="link-center hover:text-[#F4E5A3] transition-colors">{l}</a>
+          {FOOTER_LINKS.quickLinks.map(({ label, href }) => (
+            <li key={label}>
+              <FooterLink href={href} className="link-center hover:text-[#F4E5A3] transition-colors">{label}</FooterLink>
             </li>
           ))}
         </ul>
@@ -130,9 +151,9 @@ const Footer = () => (
           Resources
         </div>
         <ul className="space-y-3 text-[14px]" style={{ color: `${T.cream50}85` }}>
-          {FOOTER_LINKS.resources.map((l) => (
-            <li key={l}>
-              <a href="#" className="link-center hover:text-[#F4E5A3] transition-colors">{l}</a>
+          {FOOTER_LINKS.resources.map(({ label, href, target }) => (
+            <li key={label}>
+              <FooterLink href={href} target={target} className="link-center hover:text-[#F4E5A3] transition-colors">{label}</FooterLink>
             </li>
           ))}
         </ul>

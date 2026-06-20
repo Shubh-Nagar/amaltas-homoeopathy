@@ -24,7 +24,7 @@ const GALLERY_IMAGES = [
   { src: '/library/library6.jpg', caption: 'Student Study Area' },
 ];
 
-const FALLBACK = '/campus/homeopathycampus.JPG';
+const FALLBACK = '/campus/homoepathy.png';
 
 const STATS = [
   { value: '2,609', label: 'Books in Collection' },
@@ -118,7 +118,7 @@ export default function LibrarySection() {
         style={{ minHeight: 420, background: T.forest800 }}
       >
         <img
-          src="/campus/homeopathycampus.JPG"
+          src="/campus/homoepathy.png"
           alt="Amaltas Library"
           style={{
             position: 'absolute', inset: 0,

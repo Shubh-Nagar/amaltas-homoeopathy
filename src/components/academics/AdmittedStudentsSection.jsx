@@ -17,7 +17,6 @@ const BATCHES = [
     current: true,
     course: 'BHMS Degree Course',
     sanctioned: 100,
-    admitted: 67,
     file: 'Student list batch 25-26.pdf',
     description: 'Complete list of students admitted to the BHMS Degree Programme for the academic year 2025–26, as approved by the National Commission for Homoeopathy and affiliated with MPMSU, Jabalpur.',
   },
@@ -27,9 +26,8 @@ const BATCHES = [
     current: false,
     course: 'BHMS Degree Course',
     sanctioned: 60,
-    admitted: 60,
     file: 'UG Students Admited Batch 2024-25.pdf',
-    description: 'Complete list of students admitted to the BHMS Degree Programme for the academic year 2024–25. Full intake of 60 seats was achieved for this batch.',
+    description: 'Complete list of students admitted to the BHMS Degree Programme for the academic year 2024–25, as approved by the National Commission for Homoeopathy and affiliated with MPMSU, Jabalpur.',
   },
 ];
 
@@ -45,8 +43,6 @@ function PdfViewer({ batch }) {
   const [loaded, setLoaded] = useState(false);
   const [error,  setError]  = useState(false);
   const url = BASE + encodeURIComponent(batch.file);
-  const fillPct = Math.round((batch.admitted / batch.sanctioned) * 100);
-  const full = fillPct === 100;
 
   return (
     <div
@@ -93,65 +89,6 @@ function PdfViewer({ batch }) {
             >
               {batch.year}
             </h3>
-          </div>
-
-          {/* Stat pills */}
-          <div className="flex items-center gap-3">
-            <div className="text-center">
-              <div
-                className="text-[28px] font-semibold leading-none"
-                style={{ ...fontDisplay, color: batch.current ? '#FFFFFF' : T.forest800 }}
-              >
-                {batch.sanctioned}
-              </div>
-              <div
-                className="text-[10px] tracking-[0.14em] uppercase mt-0.5"
-                style={{ ...MONO, color: batch.current ? `${T.cream50}66` : T.muted500 }}
-              >
-                Sanctioned
-              </div>
-            </div>
-            <div
-              className="w-px h-10 self-center"
-              style={{ background: batch.current ? `${T.cream50}20` : `${T.ink900}12` }}
-            />
-            <div className="text-center">
-              <div
-                className="text-[28px] font-semibold leading-none"
-                style={{ ...fontDisplay, color: full ? (batch.current ? T.biolum : T.forest600) : (batch.current ? T.gold100 : T.gold700) }}
-              >
-                {batch.admitted}
-              </div>
-              <div
-                className="text-[10px] tracking-[0.14em] uppercase mt-0.5"
-                style={{ ...MONO, color: batch.current ? `${T.cream50}66` : T.muted500 }}
-              >
-                Admitted
-              </div>
-            </div>
-          </div>
-        </div>
-
-        {/* Fill bar */}
-        <div className="mt-4">
-          <div className="flex items-center justify-between mb-1.5">
-            <span className="text-[10px] tracking-[0.12em] uppercase" style={{ ...MONO, color: batch.current ? `${T.cream50}66` : T.muted500 }}>
-              Fill rate
-            </span>
-            <span className="text-[12px] font-bold" style={{ ...MONO, color: batch.current ? T.gold100 : (full ? T.forest600 : T.gold700) }}>
-              {fillPct}%{full ? ' · Full Intake' : ''}
-            </span>
-          </div>
-          <div className="w-full h-2 rounded-full" style={{ background: batch.current ? `${T.cream50}15` : `${T.ink900}10` }}>
-            <div
-              className="h-full rounded-full"
-              style={{
-                width: `${fillPct}%`,
-                background: full
-                  ? `linear-gradient(90deg, ${T.forest600}, ${T.biolum})`
-                  : `linear-gradient(90deg, ${T.gold600}, ${T.gold100})`,
-              }}
-            />
           </div>
         </div>
       </div>
@@ -258,7 +195,7 @@ export default function AdmittedStudentsSection() {
       {/* ═══════════════════════════  HERO  ═══════════════════════════ */}
       <section className="relative overflow-hidden" style={{ minHeight: 360, background: T.forest800 }}>
         <img
-          src="/campus/homeopathycampus.JPG"
+          src="/campus/homoepathy.png"
           alt="Amaltas Students"
           style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center 35%', opacity: 0.2 }}
           draggable="false"
@@ -302,10 +239,10 @@ export default function AdmittedStudentsSection() {
         <Container>
           <div ref={statsRef} className="grid grid-cols-2 lg:grid-cols-4 gap-6 text-center">
             {[
-              { value: '127', label: 'Total Students (Both Batches)' },
-              { value: '2',   label: 'Batches on Record' },
-              { value: '100', label: 'Seats (2025–26)' },
-              { value: '100%', label: 'Fill Rate (2024–25)' },
+              { value: 'BHMS',  label: 'Programme Offered' },
+              { value: '2',     label: 'Batches on Record' },
+              { value: '100',   label: 'Seats (2025–26)' },
+              { value: 'NCH',   label: 'Sanctioning Authority' },
             ].map(({ value, label }, i) => (
               <div
                 key={label}

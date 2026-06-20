@@ -109,7 +109,7 @@ export default function TeachingFacultySection() {
         style={{ minHeight: 380, background: T.forest800 }}
       >
         <img
-          src="/campus/homeopathycampus.JPG"
+          src="/campus/homoepathy.png"
           alt="Amaltas Institute"
           style={{
             position: 'absolute', inset: 0,

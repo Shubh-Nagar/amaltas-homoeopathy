@@ -18,7 +18,7 @@ const NEWS = [
     date: '12 May 2025',
     author: 'Admin Office',
     category: 'Institutional',
-    image: '/campus/homeopathycampus.JPG',
+    image: '/campus/homoepathy.png',
     excerpt: 'The National Commission for Homoeopathy has granted enhanced recognition to Amaltas Institute of Homoeopathy for the academic year 2025–26, raising the sanctioned intake from 60 to 100 seats.',
     content: `Amaltas Institute of Homoeopathy, Hospital and Research Centre has received enhanced recognition from the National Commission for Homoeopathy (NCH), New Delhi, with the sanctioned intake capacity for the BHMS Degree Programme raised from 60 to 100 seats for the academic year 2025–26.
 

@@ -3,8 +3,10 @@ import { Link } from 'react-router-dom';
 import { ChevronDown, ArrowUpRight } from 'lucide-react';
 import { T } from '../../styles/tokens';
 
-const NavLink = ({ href, className, style, onMouseEnter, onMouseLeave, children }) => {
-  if (href && href.startsWith('/')) {
+const isFile = (href) => href && /\.(pdf|doc|docx|xls|xlsx|png|jpg|jpeg)$/i.test(href);
+
+const NavLink = ({ href, target, className, style, onMouseEnter, onMouseLeave, children }) => {
+  if (href && href.startsWith('/') && !isFile(href)) {
     return (
       <Link to={href} className={className} style={style} onMouseEnter={onMouseEnter} onMouseLeave={onMouseLeave}>
         {children}
@@ -12,7 +14,7 @@ const NavLink = ({ href, className, style, onMouseEnter, onMouseLeave, children 
     );
   }
   return (
-    <a href={href || '#'} className={className} style={style} onMouseEnter={onMouseEnter} onMouseLeave={onMouseLeave}>
+    <a href={href || '#'} target={target} rel={target === '_blank' ? 'noopener noreferrer' : undefined} className={className} style={style} onMouseEnter={onMouseEnter} onMouseLeave={onMouseLeave}>
       {children}
     </a>
   );
@@ -61,6 +63,7 @@ const NavDropdown = ({ item }) => {
               <NavLink
                 key={c.label}
                 href={c.href}
+                target={c.target}
                 className="flex items-center justify-between px-5 py-2.5 text-[13.5px] transition-colors"
                 style={{ color: T.ink900 }}
                 onMouseEnter={(e) => (e.currentTarget.style.color = T.gold700)}

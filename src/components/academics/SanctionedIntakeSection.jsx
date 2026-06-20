@@ -1,5 +1,5 @@
 import React from 'react';
-import { GraduationCap, Users, CheckCircle2, TrendingUp } from 'lucide-react';
+import { GraduationCap, TrendingUp } from 'lucide-react';
 import { T, fontDisplay, fontBody } from '../../styles/tokens';
 import Container from '../ui/Container';
 import Eyebrow from '../ui/Eyebrow';
@@ -12,14 +12,14 @@ const YEARS = [
     year: '2025 – 26',
     level: 'Under Graduate',
     rows: [
-      { course: 'BHMS Degree Course', sanctioned: 100, admitted: 67 },
+      { course: 'BHMS Degree Course', sanctioned: 100 },
     ],
   },
   {
     year: '2024 – 25',
     level: 'Under Graduate',
     rows: [
-      { course: 'BHMS Degree Course', sanctioned: 60, admitted: 60 },
+      { course: 'BHMS Degree Course', sanctioned: 60 },
     ],
   },
 ];
@@ -30,48 +30,6 @@ const slide = (inView, delay = 0) => ({
   transition: `opacity 0.75s cubic-bezier(0.22,1,0.36,1) ${delay}s, transform 0.75s cubic-bezier(0.22,1,0.36,1) ${delay}s`,
 });
 
-function FillBar({ admitted, sanctioned }) {
-  const pct = Math.round((admitted / sanctioned) * 100);
-  const full = pct === 100;
-  return (
-    <div className="mt-5">
-      <div className="flex items-center justify-between mb-2">
-        <span className="text-[12px] font-semibold" style={{ ...MONO, color: T.muted500, letterSpacing: '0.1em' }}>
-          ADMISSION FILL RATE
-        </span>
-        <span
-          className="text-[13px] font-bold"
-          style={{ ...MONO, color: full ? T.forest600 : T.gold700 }}
-        >
-          {pct}%
-        </span>
-      </div>
-      <div
-        className="w-full h-2.5 rounded-full overflow-hidden"
-        style={{ background: `${T.ink900}10` }}
-      >
-        <div
-          className="h-full rounded-full transition-all duration-1000"
-          style={{
-            width: `${pct}%`,
-            background: full
-              ? `linear-gradient(90deg, ${T.forest600}, ${T.forest800})`
-              : `linear-gradient(90deg, ${T.gold600}, ${T.gold700})`,
-          }}
-        />
-      </div>
-      <p className="mt-1.5 text-[12px]" style={{ color: T.muted500 }}>
-        {admitted} of {sanctioned} seats filled
-        {full && (
-          <span className="ml-2 inline-flex items-center gap-1" style={{ color: T.forest600 }}>
-            <CheckCircle2 size={12} strokeWidth={2.5} />
-            Full intake
-          </span>
-        )}
-      </p>
-    </div>
-  );
-}
 
 export default function SanctionedIntakeSection() {
   const [heroRef,  heroInView]  = useInView(0.08);
@@ -83,7 +41,7 @@ export default function SanctionedIntakeSection() {
       {/* ═══════════════════════════  HERO  ═══════════════════════════ */}
       <section className="relative overflow-hidden" style={{ minHeight: 360, background: T.forest800 }}>
         <img
-          src="/campus/homeopathycampus.JPG"
+          src="/campus/homoepathy.png"
           alt="Amaltas Institute"
           style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center 35%', opacity: 0.2 }}
           draggable="false"
@@ -105,8 +63,8 @@ export default function SanctionedIntakeSection() {
               className="mt-5 text-[16px] leading-relaxed max-w-xl mx-auto"
               style={{ color: `${T.cream50}BB`, ...slide(heroInView, 0.2) }}
             >
-              Official intake capacity and admitted student data for the BHMS Degree
-              Programme — as sanctioned by the National Commission for Homoeopathy.
+              Official intake capacity for the BHMS Degree Programme —
+              as sanctioned by the National Commission for Homoeopathy.
             </p>
             <div
               className="mt-7 flex items-center justify-center gap-2 text-[11px] tracking-[0.18em] uppercase"
@@ -164,8 +122,7 @@ export default function SanctionedIntakeSection() {
             </h2>
             <p className="mt-3 text-[15px] leading-relaxed max-w-2xl" style={{ color: T.muted500 }}>
               The following data reflects the intake capacity sanctioned by the National
-              Commission for Homoeopathy (NCH) and the number of students admitted in each
-              academic year.
+              Commission for Homoeopathy (NCH) for each academic year.
             </p>
           </div>
 
@@ -234,7 +191,7 @@ export default function SanctionedIntakeSection() {
                         ...MONO,
                         background: `${T.forest800}06`,
                         borderBottom: `1px solid ${T.ink900}08`,
-                        gridTemplateColumns: '2rem 1fr 9rem 9rem',
+                        gridTemplateColumns: '2rem 1fr 9rem',
                         gap: '0 1rem',
                         color: T.muted500,
                       }}
@@ -242,7 +199,6 @@ export default function SanctionedIntakeSection() {
                       <span>No.</span>
                       <span>Course</span>
                       <span className="text-center">Sanctioned</span>
-                      <span className="text-center">Admitted</span>
                     </div>
 
                     {/* Rows */}
@@ -251,7 +207,7 @@ export default function SanctionedIntakeSection() {
                         key={ri}
                         className="grid items-center px-6 py-5"
                         style={{
-                          gridTemplateColumns: '2rem 1fr 9rem 9rem',
+                          gridTemplateColumns: '2rem 1fr 9rem',
                           gap: '0 1rem',
                           borderBottom: `1px solid ${T.ink900}06`,
                         }}
@@ -270,32 +226,9 @@ export default function SanctionedIntakeSection() {
                           </span>
                           <p className="mt-1 text-[10px]" style={{ ...MONO, color: T.muted500 }}>SEATS</p>
                         </div>
-                        <div className="text-center">
-                          <span
-                            className="inline-flex items-center justify-center w-14 h-10 rounded-xl text-[22px] font-bold"
-                            style={{
-                              ...fontDisplay,
-                              background: row.admitted === row.sanctioned
-                                ? `${T.forest600}14`
-                                : `${T.gold600}14`,
-                              color: row.admitted === row.sanctioned
-                                ? T.forest600
-                                : T.gold700,
-                            }}
-                          >
-                            {row.admitted}
-                          </span>
-                          <p className="mt-1 text-[10px]" style={{ ...MONO, color: T.muted500 }}>ADMITTED</p>
-                        </div>
                       </div>
                     ))}
 
-                    {/* Fill rate bar */}
-                    <div className="px-6 pb-6">
-                      {yr.rows.map((row, ri) => (
-                        <FillBar key={ri} admitted={row.admitted} sanctioned={row.sanctioned} />
-                      ))}
-                    </div>
                   </div>
                 </div>
               );

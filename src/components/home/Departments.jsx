@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import {
   Skull, FlaskConical, Leaf, BookOpen, Activity,
   Scissors, Stethoscope, Heart, Scale, Microscope,
+  Wind, Users,
 } from 'lucide-react';
 import { T, fontDisplay } from '../../styles/tokens';
 import Container from '../ui/Container';
@@ -69,6 +70,18 @@ export const DEPARTMENTS = [
     icon:        Microscope,
     name:        'Pathology and Microbiology',
     description: 'Laboratory diagnosis of disease through histopathology, clinical pathology, and microbial analysis.',
+  },
+  {
+    slug:        'yoga',
+    icon:        Wind,
+    name:        'Yoga',
+    description: 'Holistic discipline integrating asanas, pranayama, and meditation to complement homoeopathic clinical practice.',
+  },
+  {
+    slug:        'community-medicine',
+    icon:        Users,
+    name:        'Community Medicine, Research Methodology and Biostatistics',
+    description: 'Population health, disease prevention, epidemiology, and evidence-based practice for community healthcare.',
   },
 ];
 

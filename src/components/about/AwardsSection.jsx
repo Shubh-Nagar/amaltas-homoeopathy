@@ -1,7 +1,7 @@
 import React from 'react';
 import {
-  Award, Star, ShieldCheck, Trophy, BadgeCheck,
-  Landmark, Microscope, HeartHandshake, GraduationCap,
+  ShieldCheck, Trophy,
+  Landmark, GraduationCap,
   CalendarDays, Building2, Leaf,
 } from 'lucide-react';
 import { T, fontDisplay } from '../../styles/tokens';
@@ -11,50 +11,13 @@ import useInView from '../../hooks/useInView';
 
 const MONO = { fontFamily: "'DM Mono', 'Courier New', monospace" };
 
-/* ─── Replace these with real data when available ─────────────────── */
-const AWARDS = [
-  {
-    icon: Trophy,
-    year: '2024',
-    title: 'Award Name Here',
-    body: 'Brief description of the award, the awarding body, and the achievement it recognises. Replace this with actual award details.',
-    tag: 'Excellence in Education',
-  },
-  {
-    icon: Star,
-    year: '2023',
-    title: 'Award Name Here',
-    body: 'Brief description of the award, the awarding body, and the achievement it recognises. Replace this with actual award details.',
-    tag: 'Community Service',
-  },
-  {
-    icon: Award,
-    year: '2023',
-    title: 'Award Name Here',
-    body: 'Brief description of the award, the awarding body, and the achievement it recognises. Replace this with actual award details.',
-    tag: 'Clinical Excellence',
-  },
-  {
-    icon: BadgeCheck,
-    year: '2022',
-    title: 'Award Name Here',
-    body: 'Brief description of the award, the awarding body, and the achievement it recognises. Replace this with actual award details.',
-    tag: 'Healthcare Innovation',
-  },
-  {
-    icon: HeartHandshake,
-    year: '2022',
-    title: 'Award Name Here',
-    body: 'Brief description of the award, the awarding body, and the achievement it recognises. Replace this with actual award details.',
-    tag: 'Rural Outreach',
-  },
-  {
-    icon: Microscope,
-    year: '2021',
-    title: 'Award Name Here',
-    body: 'Brief description of the award, the awarding body, and the achievement it recognises. Replace this with actual award details.',
-    tag: 'Research',
-  },
+const AWARD_IMAGES = [
+  '/awards/a1.png',
+  '/awards/a2.png',
+  '/awards/a3.png',
+  '/awards/a4.png',
+  '/awards/a5.jpeg',
+  '/awards/a6.jpeg',
 ];
 
 const RECOGNITIONS = [
@@ -292,10 +255,10 @@ export default function AwardsSection() {
           </div>
 
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            {AWARDS.map(({ icon: Icon, year, title, body, tag }, i) => (
+            {AWARD_IMAGES.map((src, i) => (
               <div
                 key={i}
-                className="group rounded-2xl p-6 flex flex-col gap-4"
+                className="group rounded-2xl overflow-hidden"
                 style={{
                   background: T.cream50,
                   border: `1px solid ${T.ink900}0D`,
@@ -313,50 +276,20 @@ export default function AwardsSection() {
                   e.currentTarget.style.borderColor = `${T.ink900}0D`;
                 }}
               >
-                {/* Header row */}
-                <div className="flex items-start justify-between gap-3">
-                  <div
-                    className="w-11 h-11 rounded-xl flex items-center justify-center flex-shrink-0"
-                    style={{ background: T.gold100, color: T.forest800 }}
-                  >
-                    <Icon size={20} strokeWidth={1.8} />
-                  </div>
-                  <span
-                    className="text-[11px] font-semibold px-2.5 py-1 rounded-full"
+                <div style={{ aspectRatio: '4 / 3', overflow: 'hidden' }}>
+                  <img
+                    src={src}
+                    alt={`Amaltas Award ${i + 1}`}
                     style={{
-                      ...MONO,
-                      background: `${T.gold600}14`,
-                      color: T.gold700,
-                      letterSpacing: '0.08em',
+                      width: '100%', height: '100%',
+                      objectFit: 'cover',
+                      objectPosition: 'center',
+                      display: 'block',
+                      transition: 'transform 0.6s ease',
                     }}
-                  >
-                    {year}
-                  </span>
-                </div>
-
-                <div className="flex-1">
-                  <h3
-                    className="text-[16px] font-semibold mb-2 leading-snug"
-                    style={{ ...fontDisplay, color: T.ink900 }}
-                  >
-                    {title}
-                  </h3>
-                  <p className="text-[13.5px] leading-[1.8]" style={{ color: T.muted500 }}>
-                    {body}
-                  </p>
-                </div>
-
-                {/* Tag + animated bottom rule */}
-                <div className="flex items-center justify-between pt-1">
-                  <span
-                    className="text-[11px] tracking-[0.1em] uppercase"
-                    style={{ ...MONO, color: `${T.forest800}80` }}
-                  >
-                    {tag}
-                  </span>
-                  <div
-                    className="h-px w-6 group-hover:w-12 transition-all duration-500 rounded-full"
-                    style={{ background: T.gold600 }}
+                    draggable="false"
+                    onMouseEnter={e => { e.currentTarget.style.transform = 'scale(1.05)'; }}
+                    onMouseLeave={e => { e.currentTarget.style.transform = 'scale(1)'; }}
                   />
                 </div>
               </div>

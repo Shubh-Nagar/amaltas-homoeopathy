@@ -20,11 +20,11 @@ export const NAV = [
     label: 'Admissions',
     children: [
       { label: 'Admission Procedure',   href: '/admissions/procedure' },
-      { label: 'Fees Structure',        href: '/admissions/fees' },
+      // { label: 'Fees Structure',        href: '/admissions/fees' },
       { label: 'Entrance Examinations', href: '#entrance' },
       { label: 'Enquiry Form',          href: '#enquiry' },
       { label: 'Scholarships',          href: '#scholarship' },
-      { label: 'Download Brochure',     href: '#brochure' },
+      { label: 'Download Brochure',     href: '/homeopathy brochure.pdf', target: '_blank' },
     ],
   },
   {
@@ -37,7 +37,7 @@ export const NAV = [
       { label: 'Library',               href: '/academics/library' },
       { label: 'Research Publications', href: '/academics/research-publications' },
       { label: 'Academic Calendar',     href: '#calendar' },
-      { label: 'Results',               href: '#results' },
+      // { label: 'Results',               href: '#results' },
     ],
   },
   {
@@ -67,14 +67,20 @@ export const NAV = [
 /* Quick-link / resource / contact data used by the Footer.
    Kept here so all "what the institution says about itself" lives in /data. */
 export const FOOTER_LINKS = {
-  quickLinks: ['About', 'Admissions', 'Departments', 'Hospital', 'Faculty', 'Gallery'],
+  quickLinks: [
+    { label: 'About',       href: '/about/institution' },
+    { label: 'Admissions',  href: '/admissions/procedure' },
+    { label: 'Departments', href: '/academics/departments' },
+    { label: 'Hospital',    href: '/hospital/departments' },
+    { label: 'Faculty',     href: '/academics/teaching-faculty' },
+    { label: 'Gallery',     href: '/campus/gallery' },
+  ],
   resources: [
-    'Download Brochure',
-    'Fee Structure',
-    'Citizen Charter',
-    'Research Publications',
-    'Recognition & Affiliation',
-    'Anti-Ragging Cell',
+    { label: 'Download Brochure',       href: '/homeopathy brochure.pdf', target: '_blank' },
+    { label: 'Citizen Charter',         href: '/hospital/citizen-charter' },
+    { label: 'Research Publications',   href: '/academics/research-publications' },
+    { label: 'Recognition & Affiliation', href: '/about/recognition-affiliation' },
+    { label: 'Anti-Ragging Cell',       href: '#' },
   ],
 };
 

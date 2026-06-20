@@ -444,6 +444,88 @@ export const DEPARTMENT_DETAILS = {
     ],
   },
 
+  yoga: {
+    name:    'Yoga',
+    tagline: 'Harmonising body, mind and spirit — integrating yogic science with homoeopathic clinical practice.',
+    intro:
+      'Yoga is a holistic discipline that harmonizes the body, mind, and spirit through physical postures (asanas), breathing techniques (pranayama), meditation, and ethical practices. Derived from the Sanskrit word Yuj, meaning "to unite" or "to join," Yoga aims to achieve balance, self-awareness, and overall well-being, ultimately leading to physical health, mental clarity, emotional stability, and spiritual growth.',
+
+    overview: [
+      'Provides students with a sound understanding of yogic philosophy and practices, including asanas, pranayama, kriyas, and meditation through integrated theoretical and practical training.',
+      'Emphasis is placed on the therapeutic application of Yoga in health promotion, disease management, and clinical practice.',
+      'Fosters an understanding of the complementary relationship between Yoga and Homoeopathy, enabling students to adopt a holistic approach to patient care.',
+      'Equips students to effectively integrate yogic interventions as a supportive component of homoeopathic treatment.',
+    ],
+
+    equipment: [
+      { sr: 'a', item: 'Weighing Machine',       quantity: '01' },
+      { sr: 'b', item: 'Height Chart',            quantity: '01' },
+      { sr: 'c', item: 'Blood Pressure Instrument', quantity: '01' },
+      { sr: 'd', item: 'Stethoscope',             quantity: '01' },
+      { sr: 'e', item: 'Torch',                   quantity: '01' },
+      { sr: 'f', item: 'Hammer',                  quantity: '01' },
+      { sr: 'g', item: 'Patient Record Register', quantity: '01' },
+      { sr: 'h', item: 'Case Taking Performa',    quantity: 'As Required' },
+      { sr: 'i', item: 'Diet Chart Pad',          quantity: 'As Required' },
+      { sr: 'j', item: 'Yoga Mat',                quantity: '35' },
+      { sr: 'k', item: 'Yoga Stretching Belt',    quantity: '10' },
+      { sr: 'l', item: 'Yoga Exercise Ball',      quantity: '05' },
+      { sr: 'm', item: 'Belly Twister',           quantity: '02' },
+      { sr: 'n', item: 'Fitness Cycle',           quantity: '01' },
+      { sr: 'o', item: 'Palm Ball',               quantity: '05' },
+    ],
+
+    stats: [
+      { label: 'Yoga Mats',     value: '35' },
+      { label: 'Stretch Belts', value: '10' },
+      { label: 'Exercise Balls', value: '05' },
+      { label: 'Equipment Items', value: '15' },
+    ],
+  },
+
+  'community-medicine': {
+    name:    'Community Medicine, Research Methodology and Biostatistics',
+    tagline: 'Advancing population health through prevention, epidemiology, and evidence-based homoeopathic practice.',
+    intro:
+      'Community Medicine is the branch of medical science concerned with the promotion of health, prevention of disease, and prolongation of life through organized efforts of society. It focuses on understanding the health needs of populations, identifying determinants of health and disease, and applying preventive, promotive, curative, and rehabilitative measures at individual, family, and community levels to improve the overall health and well-being of the community.',
+
+    overview: [
+      'A homoeopathic graduate should be able to identify and manage community health problems using clinical skills and homoeopathic principles while understanding the determinants of health and disease for effective prevention and health promotion.',
+      'Students learn to participate in disease surveillance, screening, outbreak investigation, and the management of public health issues.',
+      'Encourages community participation and addresses health-related behaviours through appropriate interventions, contributing to disease prevention and control programs.',
+      'Applies epidemiological principles in research, collects and analyses public health data, supports national health programs, and selects suitable research designs to advance evidence-based homoeopathic practice and community healthcare.',
+    ],
+
+    equipment: [
+      { sr: 1,  item: 'Barometer (Fortin)',                                   quantity: '01' },
+      { sr: 2,  item: 'Lactometer',                                            quantity: '01' },
+      { sr: 3,  item: 'Alcoholmeter',                                          quantity: '01' },
+      { sr: 4,  item: 'Water Purifier (RO, UV, TDS Regulator)',                quantity: '01' },
+      { sr: 5,  item: 'Total Dissolved Solids (TDS) Meter',                    quantity: '02' },
+      { sr: 6,  item: 'Glucometer',                                            quantity: '02' },
+      { sr: 7,  item: 'Air Quality Monitor',                                   quantity: '02' },
+      { sr: 8,  item: 'Mid Upper Arm Circumference Measuring Tape',            quantity: '05' },
+      { sr: 9,  item: 'Display: Immunization, Community & Health Programmes (Models)', quantity: '10' },
+      { sr: 10, item: 'Refrigerator',                                          quantity: '02' },
+      { sr: 11, item: 'Hydrometer (Spirit)',                                   quantity: '02' },
+      { sr: 12, item: 'Hydrometer (Milk)',                                     quantity: '02' },
+      { sr: 13, item: 'Weighing Machine (Adult)',                              quantity: '03' },
+      { sr: 14, item: "Salter's Baby Weighing Machine",                        quantity: '02' },
+      { sr: 15, item: 'Harpenden Skinfold Caliper',                           quantity: '02' },
+      { sr: 16, item: 'Height Measuring Stand',                               quantity: '02' },
+      { sr: 17, item: 'Catalogue on Practical Methods & Field Visits',        quantity: '02' },
+      { sr: 18, item: "Horrocks's Apparatus (Bleaching Powder Estimation)",   quantity: '02' },
+      { sr: 19, item: 'Chloroscope (Residual Chlorine in Drinking Water)',    quantity: '02' },
+    ],
+
+    stats: [
+      { label: 'Equipment Items', value: '19+' },
+      { label: 'Museum Models',   value: '12+' },
+      { label: 'Display Charts',  value: '20+' },
+      { label: 'Software Tools',  value: '01'  },
+    ],
+  },
+
   'pathology-microbiology': {
     name:    'Pathology and Microbiology',
     tagline: 'Foundation of modern medicine — understanding disease through laboratory science and microscopic analysis.',

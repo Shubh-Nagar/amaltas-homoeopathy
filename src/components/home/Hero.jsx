@@ -320,7 +320,7 @@ const Hero = () => {
               }}
             >
               <img
-                src="/campus/homeopathycampus.JPG"
+                src="/campus/homoepathy.png"
                 alt="Amaltas Homoeopathy Campus, Dewas"
                 className="w-full h-full object-cover object-center"
                 draggable="false"

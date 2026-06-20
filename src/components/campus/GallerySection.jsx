@@ -23,7 +23,7 @@ const GALLERY = [
   },
   {
     id: 2,
-    src: '/campus/homeopathycampus.JPG',
+    src: '/campus/homoepathy.png',
     title: 'Homoeopathy Institute',
     caption: 'A dedicated building housing the BHMS programme and clinical facilities.',
     cat: 'Campus',

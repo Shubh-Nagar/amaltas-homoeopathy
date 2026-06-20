@@ -34,10 +34,10 @@ const TopUtilityBar = () => (
 
       <div className="flex items-center gap-4">
         <span className="opacity-70">Follow us</span>
-        <a href="#" aria-label="Facebook"  className="hover:text-[#F4E5A3] transition-colors">
+        <a href="https://www.facebook.com/amaltasinstituteofhomoeopathy/" target="_blank" rel="noopener noreferrer" aria-label="Facebook"  className="hover:text-[#F4E5A3] transition-colors">
           <Facebook size={14} />
         </a>
-        <a href="#" aria-label="Instagram" className="hover:text-[#F4E5A3] transition-colors">
+        <a href="https://www.instagram.com/amaltasinstituteofhomoeopathy/" target="_blank" rel="noopener noreferrer" aria-label="Instagram" className="hover:text-[#F4E5A3] transition-colors">
           <Instagram size={14} />
         </a>
       </div>

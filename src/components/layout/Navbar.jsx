@@ -64,7 +64,7 @@ const Navbar = () => {
         </nav>
 
         <div className="hidden lg:block">
-          <Button variant="primary" icon={ArrowUpRight} href="#enquiry">
+          <Button variant="primary" icon={ArrowUpRight} href="https://wa.me/919650096850" target="_blank" rel="noopener noreferrer">
             Inquire Now
           </Button>
         </div>

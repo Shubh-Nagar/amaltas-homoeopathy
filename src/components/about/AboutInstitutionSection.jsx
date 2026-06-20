@@ -81,7 +81,7 @@ export default function AboutInstitutionSection() {
       >
         {/* Campus image */}
         <img
-          src="/campus/homeopathycampus.JPG"
+          src="/campus/homoepathy.png"
           alt="Amaltas Institute campus"
           style={{
             position: 'absolute', inset: 0,
@@ -223,7 +223,7 @@ export default function AboutInstitutionSection() {
                 }}
               >
                 <img
-                  src="/campus/amaltas_photo.jpeg"
+                  src="/campus/homoepathy.png"
                   alt="Amaltas Institute building"
                   style={{
                     width: '100%', height: '100%',

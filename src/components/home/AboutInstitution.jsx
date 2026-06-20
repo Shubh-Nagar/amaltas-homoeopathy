@@ -65,7 +65,7 @@ const AboutInstitution = () => {
                 }}
               >
                 <img
-                  src="/campus/homeopathycampus.JPG "
+                  src="/campus/homoepathy.png "
                   alt="Aerial view of the Amaltas Institute campus"
                   style={{
                     

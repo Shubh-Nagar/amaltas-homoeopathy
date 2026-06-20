@@ -79,7 +79,7 @@ export default function FounderMessageSection() {
       >
         {/* Campus image, very faint */}
         <img
-          src="/campus/homeopathycampus.JPG"
+          src="/campus/homoepathy.png"
           alt=""
           aria-hidden="true"
           style={{

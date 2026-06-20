@@ -228,7 +228,7 @@ export default function ResearchPublicationsSection() {
       {/* ═══════════════════════════  HERO  ═══════════════════════════ */}
       <section className="relative overflow-hidden" style={{ minHeight: 380, background: T.forest800 }}>
         <img
-          src="/campus/homeopathycampus.JPG"
+          src="/campus/homoepathy.png"
           alt="Amaltas Research"
           style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center 35%', opacity: 0.2 }}
           draggable="false"
