@@ -19,27 +19,38 @@ const MobileMenu = ({ onLinkClick }) => {
         <ul className="flex flex-col">
           {NAV.map((item, idx) => (
             <li key={item.label} className="py-1">
-              <button
-                onClick={() => {
-                  if (item.children) {
-                    setOpenIdx(openIdx === idx ? null : idx);
-                  } else {
-                    if (item.href) window.location.hash = item.href;
-                    onLinkClick?.();
-                  }
-                }}
-                className="w-full flex items-center justify-between py-2 text-[15px] font-medium"
-                style={{ color: T.ink900 }}
-              >
-                {item.label}
-                {item.children && (
+              {!item.children && item.href && item.href.startsWith('/') ? (
+                <Link
+                  to={item.href}
+                  onClick={onLinkClick}
+                  className="w-full flex items-center justify-between py-2 text-[15px] font-medium"
+                  style={{ color: T.ink900, textDecoration: 'none' }}
+                >
+                  {item.label}
+                </Link>
+              ) : !item.children ? (
+                <a
+                  href={item.href || '#'}
+                  onClick={onLinkClick}
+                  className="w-full flex items-center justify-between py-2 text-[15px] font-medium"
+                  style={{ color: T.ink900, textDecoration: 'none' }}
+                >
+                  {item.label}
+                </a>
+              ) : (
+                <button
+                  onClick={() => setOpenIdx(openIdx === idx ? null : idx)}
+                  className="w-full flex items-center justify-between py-2 text-[15px] font-medium"
+                  style={{ color: T.ink900 }}
+                >
+                  {item.label}
                   <ChevronDown
                     size={16}
                     className="transition-transform"
                     style={{ transform: openIdx === idx ? 'rotate(180deg)' : 'none' }}
                   />
-                )}
-              </button>
+                </button>
+              )}
 
               {item.children && openIdx === idx && (
                 <ul className="pl-4 pb-2 pt-1 space-y-1.5">

@@ -19,11 +19,12 @@ export const NAV = [
   {
     label: 'Admissions',
     children: [
+      { label: 'Admission Details',     href: '/academics/admission-details' },
       { label: 'Admission Procedure',   href: '/admissions/procedure' },
       // { label: 'Fees Structure',        href: '/admissions/fees' },
       { label: 'Entrance Examinations', href: '#entrance' },
       { label: 'Enquiry Form',          href: '#enquiry' },
-      { label: 'Scholarships',          href: '#scholarship' },
+      { label: 'Scholarships',          href: '/admissions/scholarships' },
       { label: 'Download Brochure',     href: '/homeopathy brochure.pdf', target: '_blank' },
     ],
   },
@@ -36,7 +37,7 @@ export const NAV = [
       { label: 'Admitted Students',     href: '/academics/admitted-students' },
       { label: 'Library',               href: '/academics/library' },
       { label: 'Research Publications', href: '/academics/research-publications' },
-      { label: 'Academic Calendar',     href: '#calendar' },
+      { label: 'Academic Calendar',     href: '/academics/academic-calendar' },
       // { label: 'Results',               href: '#results' },
     ],
   },
@@ -57,7 +58,7 @@ export const NAV = [
       { label: 'Transportation',    href: '#transport' },
       { label: 'Gallery',           href: '/campus/gallery' },
       { label: 'Events',            href: '/campus/events' },
-      { label: 'Anti-Ragging Cell', href: '#anti-ragging' },
+      { label: 'Anti-Ragging Cell', href: '/campus/anti-ragging' },
       { label: 'News',             href: '/news' },
     ],
   },
@@ -80,7 +81,7 @@ export const FOOTER_LINKS = {
     { label: 'Citizen Charter',         href: '/hospital/citizen-charter' },
     { label: 'Research Publications',   href: '/academics/research-publications' },
     { label: 'Recognition & Affiliation', href: '/about/recognition-affiliation' },
-    { label: 'Anti-Ragging Cell',       href: '#' },
+    { label: 'Anti-Ragging Cell',       href: '/campus/anti-ragging' },
   ],
 };
 

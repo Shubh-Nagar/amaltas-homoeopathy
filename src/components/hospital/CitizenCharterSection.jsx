@@ -342,7 +342,7 @@ export default function CitizenCharterSection() {
               {!pdfLoaded && !pdfError && (
                 <div
                   className="absolute inset-0 flex flex-col items-center justify-center gap-4 z-10"
-                  style={{ background: `${T.cream50}F0`, minHeight: 500 }}
+                  style={{ background: `${T.cream50}F0`, minHeight: 300 }}
                 >
                   <div
                     className="w-16 h-16 rounded-2xl flex items-center justify-center animate-pulse"
@@ -403,12 +403,8 @@ export default function CitizenCharterSection() {
               <iframe
                 src={`${PDF_URL}#toolbar=1&navpanes=0&view=FitH`}
                 title="Citizen Charter 2026"
-                style={{
-                  width: '100%',
-                  height: 500,
-                  border: 'none',
-                  display: pdfError ? 'none' : 'block',
-                }}
+                className="w-full h-[300px] sm:h-[450px] lg:h-[550px]"
+                style={{ border: 'none', display: pdfError ? 'none' : 'block' }}
                 onLoad={() => setPdfLoaded(true)}
                 onError={() => { setPdfError(true); setPdfLoaded(true); }}
               />

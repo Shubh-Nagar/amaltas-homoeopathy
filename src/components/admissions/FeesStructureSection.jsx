@@ -378,7 +378,7 @@ export default function FeesStructureSection() {
           <div ref={pdfRef} className="grid lg:grid-cols-12 gap-12 lg:gap-16 items-start">
 
             {/* Left — sticky info */}
-            <div className="lg:col-span-4" style={{ ...slide(pdfInView, 0, 'left'), position: 'sticky', top: 100 }}>
+            <div className="lg:col-span-4 lg:sticky" style={{ ...slide(pdfInView, 0, 'left'), top: 100 }}>
               <Eyebrow>Official Document</Eyebrow>
               <h2
                 className="mt-4 text-[26px] lg:text-[34px] leading-[1.15] tracking-tight font-semibold"

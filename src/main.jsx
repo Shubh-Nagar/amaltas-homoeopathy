@@ -26,6 +26,10 @@ import AdmittedStudentsPage         from './pages/AdmittedStudentsPage';
 import EventsPage                   from './pages/EventsPage';
 import NewsPage                     from './pages/NewsPage';
 import GalleryPage                  from './pages/GalleryPage';
+import AntiRaggingPage              from './pages/AntiRaggingPage';
+import AcademicCalendarPage         from './pages/AcademicCalendarPage';
+import ScholarshipPage              from './pages/ScholarshipPage';
+import AdmissionDetailsPage         from './pages/AdmissionDetailsPage';
 import './styles/index.css';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
@@ -57,6 +61,10 @@ ReactDOM.createRoot(document.getElementById('root')).render(
         <Route path="/campus/events"                         element={<EventsPage />} />
         <Route path="/news"                                  element={<NewsPage />} />
         <Route path="/campus/gallery"                        element={<GalleryPage />} />
+        <Route path="/campus/anti-ragging"                   element={<AntiRaggingPage />} />
+        <Route path="/academics/academic-calendar"            element={<AcademicCalendarPage />} />
+        <Route path="/admissions/scholarships"               element={<ScholarshipPage />} />
+        <Route path="/academics/admission-details"            element={<AdmissionDetailsPage />} />
       </Routes>
     </BrowserRouter>
   </React.StrictMode>,

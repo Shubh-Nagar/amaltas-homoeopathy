@@ -133,7 +133,7 @@ function PdfViewer({ batch }) {
         {!loaded && !error && (
           <div
             className="absolute inset-0 flex flex-col items-center justify-center gap-3 z-10"
-            style={{ background: `${T.cream50}F5`, minHeight: 460 }}
+            style={{ background: `${T.cream50}F5`, minHeight: 280 }}
           >
             <div
               className="w-12 h-12 rounded-xl flex items-center justify-center animate-pulse"
@@ -164,7 +164,8 @@ function PdfViewer({ batch }) {
           <iframe
             src={`${url}#toolbar=1&navpanes=0&view=FitH`}
             title={`Admitted Students ${batch.year}`}
-            style={{ width: '100%', height: 520, border: 'none', display: 'block' }}
+            className="w-full h-[280px] sm:h-[420px] lg:h-[520px]"
+            style={{ border: 'none', display: 'block' }}
             onLoad={() => setLoaded(true)}
             onError={() => { setError(true); setLoaded(true); }}
           />

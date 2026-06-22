@@ -113,7 +113,6 @@ export default function ResearchPublicationsSection() {
               style={{
                 border: `1px solid ${T.ink900}10`,
                 boxShadow: `0 8px 32px -8px ${T.ink900}12`,
-                minHeight: 700,
                 background: '#f5f5f5',
                 ...slide(bodyInView, 0.1),
               }}
@@ -142,7 +141,8 @@ export default function ResearchPublicationsSection() {
                 <iframe
                   src={`${PDF_URL}#toolbar=1&navpanes=0&view=FitH`}
                   title="Research Publication"
-                  style={{ width: '100%', height: '80vh', minHeight: 700, border: 'none', display: 'block' }}
+                  className="w-full h-[350px] sm:h-[500px] lg:h-[700px]"
+                  style={{ border: 'none', display: 'block' }}
                   onLoad={() => setLoaded(true)}
                   onError={() => { setError(true); setLoaded(true); }}
                 />
