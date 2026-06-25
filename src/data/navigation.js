@@ -22,7 +22,6 @@ export const NAV = [
       { label: 'Admission Details',     href: '/academics/admission-details' },
       { label: 'Admission Procedure',   href: '/admissions/procedure' },
       // { label: 'Fees Structure',        href: '/admissions/fees' },
-      { label: 'Entrance Examinations', href: '#entrance' },
       { label: 'Enquiry Form',          href: '#enquiry' },
       { label: 'Scholarships',          href: '/admissions/scholarships' },
       { label: 'Download Brochure',     href: '/homeopathy brochure.pdf', target: '_blank' },
@@ -46,7 +45,6 @@ export const NAV = [
     children: [
       { label: 'Hospital Departments',    href: '/hospital/departments' },
       { label: 'Hospital Staff',          href: '/hospital/staff' },
-      { label: 'Clinical Material',       href: '#clinical' },
       { label: 'Citizen Charter',         href: '/hospital/citizen-charter' },
       { label: 'Instruments & Equipment', href: '/hospital/instruments-equipment' },
     ],
@@ -54,8 +52,8 @@ export const NAV = [
   {
     label: 'Campus Life',
     children: [
-      { label: 'Hostel & Canteen',  href: '#hostel' },
-      { label: 'Transportation',    href: '#transport' },
+      { label: 'Hostel & Canteen',  href: '/campus/hostel-canteen' },
+      { label: 'Transportation',    href: '/campus/transportation' },
       { label: 'Gallery',           href: '/campus/gallery' },
       { label: 'Events',            href: '/campus/events' },
       { label: 'Anti-Ragging Cell', href: '/campus/anti-ragging' },

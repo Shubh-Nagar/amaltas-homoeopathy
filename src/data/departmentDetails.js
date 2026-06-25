@@ -34,6 +34,12 @@ export const DEPARTMENT_DETAILS = {
       { label: 'Models',       value: '28' },
       { label: 'Diss. Tables', value: '12' },
     ],
+
+    photos: [
+      '/department%20photos/Anatomy/IMG_3495.JPG.jpeg',
+      '/department%20photos/Anatomy/IMG_3501.JPG.jpeg',
+      '/department%20photos/Anatomy/IMG_3505.JPG.jpeg',
+    ],
   },
 
   pharmacy: {
@@ -89,6 +95,15 @@ export const DEPARTMENT_DETAILS = {
       { label: 'Charts',          value: '30' },
       { label: 'Books',           value: '38' },
     ],
+
+    photos: [
+      '/department%20photos/3%20Pharmacy/IMG_3322.JPG.jpeg',
+      '/department%20photos/3%20Pharmacy/IMG_3325.JPG.jpeg',
+      '/department%20photos/3%20Pharmacy/IMG_3577.JPG.jpeg',
+      '/department%20photos/3%20Pharmacy/IMG_3593.JPG.jpeg',
+      '/department%20photos/3%20Pharmacy/IMG_3596.JPG.jpeg',
+      '/department%20photos/3%20Pharmacy/IMG_3601.JPG.jpeg',
+    ],
   },
 
   'materia-medica': {
@@ -118,6 +133,12 @@ export const DEPARTMENT_DETAILS = {
       { label: 'Animal Specimens', value: '11' },
       { label: 'Books',            value: '27' },
     ],
+
+    photos: [
+      '/department%20photos/4%20Materia%20Medica/IMG_3538.JPG.jpeg',
+      '/department%20photos/4%20Materia%20Medica/IMG_3542.JPG.jpeg',
+      '/department%20photos/4%20Materia%20Medica/IMG_3560.JPG.jpeg',
+    ],
   },
 
   'organon-of-medicine': {
@@ -141,6 +162,73 @@ export const DEPARTMENT_DETAILS = {
     stats: [
       { label: 'Charts', value: '27' },
       { label: 'Books',  value: '25' },
+    ],
+
+    photos: [
+      '/department%20photos/5%20Organon%20of%20Medicine/IMG_3523.JPG.jpeg',
+      '/department%20photos/5%20Organon%20of%20Medicine/IMG_3535.JPG.jpeg',
+      '/department%20photos/5%20Organon%20of%20Medicine/IMG_3555.JPG.jpeg',
+      '/department%20photos/5%20Organon%20of%20Medicine/IMG_3556.JPG.jpeg',
+    ],
+  },
+
+  repertory: {
+    name:    'Department of Homoeopathic Repertory & Case Taking',
+    tagline: 'Systematic indexing of Materia Medica to find the simillimum — the art and science of homoeopathic case taking.',
+    intro:
+      'The repertory is a dictionary or an index to the huge mass of symptoms of the Materia Medica, organized in a practical form indicating the relative gradation of drugs. Repertories not only contain symptoms of proving but also clinical and pathological symptoms found in the Materia Medica, with additions made by authors based on their clinical experience. As no mind can memorize all the symptoms of the Materia Medica with their relative grading, repertories serve as an instrument at the disposal of the physician for sifting through the maze of symptoms of the vast Materia Medica.\n\nCase taking is the elementary mode of collecting data from the patient; the principles and techniques of case taking demand constant updating of knowledge of disease processes and ways of interacting with human beings.',
+
+    overview: [
+      'Repertories aim at simplifying the work of the physician to find the indicated remedy by eliminating the non-indicated remedies — repertorisation is a means to arrive at the simillimum, not an end in itself.',
+      'The department is equipped with ten modern computer systems loaded with five different homoeopathic software packages covering Kent, Boger Boenninghausen, Boericke, Phatak, Synthesis, Murphy, and Complete Repertory.',
+      'Fifteen charts and digital displays covering key topics in repertory — from the evolution of repertories to the analysis and evaluation of symptoms — are maintained, with students actively preparing and contributing records.',
+      'The department displays portraits and biographical sketches of thirteen eminent founders and contributors in the field of homoeopathic repertory, from Dr. Hahnemann to contemporary masters, fostering a sense of history and tradition.',
+    ],
+
+    equipment: [
+      { sr: 1,  item: 'Computer System',                     quantity: '10' },
+      { sr: 2,  item: 'Monitor',                             quantity: '10' },
+      { sr: 3,  item: 'CPU',                                 quantity: '10' },
+      { sr: 4,  item: 'Keyboard',                            quantity: '10' },
+      { sr: 5,  item: 'Mouse',                               quantity: '10' },
+      { sr: 6,  item: 'Homoeopathic Software Packages',      quantity: '05' },
+      { sr: 7,  item: 'Eco Teak (Software)',                 quantity: '01' },
+      { sr: 8,  item: 'Hompath (Software)',                  quantity: '01' },
+      { sr: 9,  item: 'Radar Opus (Software)',               quantity: '01' },
+      { sr: 10, item: 'Scholten Element Theory (Software)',  quantity: '01' },
+      { sr: 11, item: 'Seigal Expert System (Software)',     quantity: '01' },
+    ],
+
+    charts: [
+      { sr: 'a', item: 'Evolution of repertories',                                    quantity: '01' },
+      { sr: 'b', item: 'Definition of repertory, its need and uses',                  quantity: '01' },
+      { sr: 'c', item: 'Classification of repertories',                               quantity: '01' },
+      { sr: 'd', item: 'Process of cross repertorization',                            quantity: '01' },
+      { sr: 'e', item: "Boenninghausen's evaluation order of symptoms / approach",    quantity: '01' },
+      { sr: 'f', item: "Kent's evaluation order of symptoms / approach",              quantity: '01' },
+      { sr: 'g', item: "Boger's evaluation order of symptoms / approach",             quantity: '01' },
+      { sr: 'h', item: "Kent's repertory editions",                                   quantity: '01' },
+      { sr: 'i', item: 'Card repertories',                                            quantity: '01' },
+      { sr: 'j', item: 'Repertorial syndrome and potential differential field',        quantity: '01' },
+      { sr: 'k', item: 'Conceptual image',                                            quantity: '01' },
+      { sr: 'l', item: 'Regional repertories',                                        quantity: '01' },
+      { sr: 'm', item: 'Repertory software',                                          quantity: '01' },
+      { sr: 'n', item: 'Analysis and evaluation of symptoms',                         quantity: '01' },
+      { sr: 'o', item: 'Case taking and repertory',                                   quantity: '01' },
+    ],
+
+    stats: [
+      { label: 'Computers',      value: '10' },
+      { label: 'Software Pkgs',  value: '05' },
+      { label: 'Charts',         value: '15' },
+      { label: 'Founder Portraits', value: '13' },
+    ],
+
+    photos: [
+      '/department%20photos/6%20Repertory/IMG_3054.JPG.jpeg',
+      '/department%20photos/6%20Repertory/IMG_3064.JPG.jpeg',
+      '/department%20photos/6%20Repertory/IMG_3065.JPG.jpeg',
+      '/department%20photos/6%20Repertory/IMG_3188.JPG.jpeg',
     ],
   },
 
@@ -212,6 +300,11 @@ export const DEPARTMENT_DETAILS = {
       { label: 'Biochemistry Items', value: '16' },
       { label: 'Microscopes',        value: '25' },
       { label: 'Books',              value: '26' },
+    ],
+
+    photos: [
+      '/department%20photos/2%20Physiology/IMG_3522.JPG.jpeg',
+      '/department%20photos/2%20Physiology/IMG_3528.JPG.jpeg',
     ],
   },
 
@@ -286,6 +379,15 @@ export const DEPARTMENT_DETAILS = {
       { label: 'Models',         value: '13' },
       { label: 'Books',          value: '27' },
     ],
+
+    photos: [
+      '/department%20photos/8%20Surgery/IMG_3327.JPG.jpeg',
+      '/department%20photos/8%20Surgery/IMG_3339.JPG.jpeg',
+      '/department%20photos/8%20Surgery/IMG_3394.JPG.jpeg',
+      '/department%20photos/8%20Surgery/IMG_3395.JPG.jpeg',
+      '/department%20photos/8%20Surgery/IMG_3445.JPG.jpeg',
+      '/department%20photos/8%20Surgery/IMG_3446.JPG.jpeg',
+    ],
   },
 
   'practice-of-medicine': {
@@ -324,6 +426,13 @@ export const DEPARTMENT_DETAILS = {
       { label: 'Models',   value: '11' },
       { label: 'X-Rays',   value: '19' },
       { label: 'CT Films', value: '6'  },
+    ],
+
+    photos: [
+      '/department%20photos/11%20Practice%20of%20Medicine/IMG_1730.JPG',
+      '/department%20photos/11%20Practice%20of%20Medicine/IMG_5674.JPG',
+      '/department%20photos/11%20Practice%20of%20Medicine/WhatsApp%20Image%202026-06-20%20at%203.29.24%20PM%20(1).jpeg',
+      '/department%20photos/11%20Practice%20of%20Medicine/WhatsApp%20Image%202026-06-20%20at%203.29.28%20PM%20(1).jpeg',
     ],
   },
 
@@ -413,6 +522,12 @@ export const DEPARTMENT_DETAILS = {
       { label: 'Specimens',   value: '6'  },
       { label: 'Models',      value: '6'  },
     ],
+
+    photos: [
+      '/department%20photos/9%20Obs%20Gynae/IMG_3353.JPG.jpeg',
+      '/department%20photos/9%20Obs%20Gynae/IMG_3443.JPG.jpeg',
+      '/department%20photos/9%20Obs%20Gynae/IMG_3444.JPG.jpeg',
+    ],
   },
 
   'forensic-medicine-toxicology': {
@@ -441,6 +556,13 @@ export const DEPARTMENT_DETAILS = {
       { label: 'Weapons',   value: '44' },
       { label: 'Models',    value: '18' },
       { label: 'Books',     value: '25' },
+    ],
+
+    photos: [
+      '/department%20photos/10%20Forensic%20Medicine%20and%20Toxicology/IMG_3295.JPG.jpeg',
+      '/department%20photos/10%20Forensic%20Medicine%20and%20Toxicology/IMG_3426.JPG.jpeg',
+      '/department%20photos/10%20Forensic%20Medicine%20and%20Toxicology/IMG_3432.JPG.jpeg',
+      '/department%20photos/10%20Forensic%20Medicine%20and%20Toxicology/IMG_3438.JPG.jpeg',
     ],
   },
 
@@ -480,6 +602,14 @@ export const DEPARTMENT_DETAILS = {
       { label: 'Stretch Belts', value: '10' },
       { label: 'Exercise Balls', value: '05' },
       { label: 'Equipment Items', value: '15' },
+    ],
+
+    photos: [
+      '/department%20photos/13%20Yoga%20for%20health%20Promotion/IMG_5787%202.JPG',
+      '/department%20photos/13%20Yoga%20for%20health%20Promotion/IMG_5792%202.JPG',
+      '/department%20photos/13%20Yoga%20for%20health%20Promotion/IMG_5793%202.JPG',
+      '/department%20photos/13%20Yoga%20for%20health%20Promotion/IMG_5795.JPG',
+      '/department%20photos/13%20Yoga%20for%20health%20Promotion/IMG_5807%202.JPG',
     ],
   },
 
@@ -579,6 +709,14 @@ export const DEPARTMENT_DETAILS = {
       { label: 'Specimens',    value: '25' },
       { label: 'Histo. Slides', value: '25' },
       { label: 'Models',       value: '20' },
+    ],
+
+    photos: [
+      '/department%20photos/7%20Pathology/IMG_3408.JPG.jpeg',
+      '/department%20photos/7%20Pathology/IMG_3412.JPG.jpeg',
+      '/department%20photos/7%20Pathology/IMG_3420.JPG.jpeg',
+      '/department%20photos/7%20Pathology/IMG_3437.JPG.jpeg',
+      '/department%20photos/7%20Pathology/IMG_3439.JPG.jpeg',
     ],
   },
 };

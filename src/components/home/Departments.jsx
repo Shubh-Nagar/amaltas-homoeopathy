@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import {
   Skull, FlaskConical, Leaf, BookOpen, Activity,
   Scissors, Stethoscope, Heart, Scale, Microscope,
-  Wind, Users,
+  Wind, Users, BookMarked,
 } from 'lucide-react';
 import { T, fontDisplay } from '../../styles/tokens';
 import Container from '../ui/Container';
@@ -34,6 +34,12 @@ export const DEPARTMENTS = [
     icon:        BookOpen,
     name:        'Organon of Medicine and Homoeopathic Philosophy and Fundamentals of Psychology',
     description: "Foundational philosophy and principles of homoeopathy as established by Dr. Samuel Hahnemann.",
+  },
+  {
+    slug:        'repertory',
+    icon:        BookMarked,
+    name:        'Homoeopathic Repertory & Case Taking',
+    description: 'Systematic indexing of Materia Medica symptoms and the art of case taking to reach the precise simillimum.',
   },
   {
     slug:        'physiology-biochemistry',

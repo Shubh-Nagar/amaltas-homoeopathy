@@ -3,7 +3,7 @@ import {
   ClipboardCheck, FileText, MousePointerClick,
   Building2, MapPin, Upload, CheckCircle2,
   AlertCircle, ExternalLink, GraduationCap,
-  Stethoscope, Info,
+  Stethoscope, Info, Download,
 } from 'lucide-react';
 import { T, fontDisplay } from '../../styles/tokens';
 import Container from '../ui/Container';
@@ -106,6 +106,7 @@ export default function AdmissionProcedureSection() {
   const [stepRef,  stepInView]  = useInView(0.05);
   const [docRef,   docInView]   = useInView(0.06);
   const [noteRef,  noteInView]  = useInView(0.08);
+  const [dlRef,    dlInView]    = useInView(0.08);
   const [closeRef, closeInView] = useInView(0.08);
 
   return (
@@ -476,6 +477,80 @@ export default function AdmissionProcedureSection() {
                 </div>
               ))}
             </div>
+          </div>
+        </Container>
+      </section>
+
+      {/* ═══════════════════════════════════════════════
+          REFERENCE DOCUMENTS
+      ═══════════════════════════════════════════════ */}
+      <section
+        ref={dlRef}
+        className="py-16 lg:py-20"
+        style={{ background: `${T.forest800}07`, borderTop: `1px solid ${T.forest800}0F` }}
+      >
+        <Container>
+          <div className="max-w-3xl mx-auto">
+            <div style={slide(dlInView, 0)}>
+              <Eyebrow>Reference Documents</Eyebrow>
+              <h2
+                className="mt-4 text-[26px] lg:text-[34px] leading-[1.15] tracking-tight font-semibold mb-8"
+                style={{ ...fontDisplay, color: T.ink900 }}
+              >
+                Download admission{' '}
+                <em style={{ color: T.gold700, fontStyle: 'italic' }}>guidelines</em>
+              </h2>
+            </div>
+
+            <a
+              href="/documents/Annexure%2020%20Reservation%20relaxation%20in%20admission.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-5 rounded-2xl px-6 py-5 transition-all duration-200"
+              style={{
+                background: '#FFFFFF',
+                border: `1px solid ${T.ink900}0C`,
+                boxShadow: `0 2px 12px -4px ${T.ink900}08`,
+                textDecoration: 'none',
+                opacity: dlInView ? 1 : 0,
+                transform: dlInView ? 'translateY(0)' : 'translateY(20px)',
+                transition: 'opacity 0.65s ease 0.1s, transform 0.65s ease 0.1s, border-color 0.2s, box-shadow 0.2s',
+              }}
+              onMouseEnter={e => {
+                e.currentTarget.style.borderColor = `${T.gold600}40`;
+                e.currentTarget.style.boxShadow = `0 6px 24px -6px ${T.ink900}12`;
+              }}
+              onMouseLeave={e => {
+                e.currentTarget.style.borderColor = `${T.ink900}0C`;
+                e.currentTarget.style.boxShadow = `0 2px 12px -4px ${T.ink900}08`;
+              }}
+            >
+              {/* Icon */}
+              <div
+                className="flex-shrink-0 w-12 h-12 rounded-xl flex items-center justify-center"
+                style={{ background: `${T.forest800}10` }}
+              >
+                <FileText size={22} strokeWidth={1.6} style={{ color: T.forest800 }} />
+              </div>
+
+              {/* Label */}
+              <div className="flex-1 min-w-0">
+                <div className="text-[16px] font-semibold" style={{ color: T.ink900 }}>
+                  Annexure 20 — Reservation &amp; Relaxation in Admission
+                </div>
+                <div className="text-[13px] mt-0.5" style={{ color: T.muted500 }}>
+                  Official guidelines on reservation categories and eligibility relaxations · PDF
+                </div>
+              </div>
+
+              {/* Download cue */}
+              <div
+                className="flex-shrink-0 w-10 h-10 rounded-full flex items-center justify-center"
+                style={{ background: `${T.gold600}14`, color: T.gold700 }}
+              >
+                <Download size={16} strokeWidth={2.2} />
+              </div>
+            </a>
           </div>
         </Container>
       </section>

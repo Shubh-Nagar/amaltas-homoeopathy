@@ -30,6 +30,8 @@ import AntiRaggingPage              from './pages/AntiRaggingPage';
 import AcademicCalendarPage         from './pages/AcademicCalendarPage';
 import ScholarshipPage              from './pages/ScholarshipPage';
 import AdmissionDetailsPage         from './pages/AdmissionDetailsPage';
+import TransportationPage           from './pages/TransportationPage';
+import HostelCanteenPage            from './pages/HostelCanteenPage';
 import './styles/index.css';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
@@ -65,6 +67,8 @@ ReactDOM.createRoot(document.getElementById('root')).render(
         <Route path="/academics/academic-calendar"            element={<AcademicCalendarPage />} />
         <Route path="/admissions/scholarships"               element={<ScholarshipPage />} />
         <Route path="/academics/admission-details"            element={<AdmissionDetailsPage />} />
+        <Route path="/campus/transportation"                  element={<TransportationPage />} />
+        <Route path="/campus/hostel-canteen"                  element={<HostelCanteenPage />} />
       </Routes>
     </BrowserRouter>
   </React.StrictMode>,

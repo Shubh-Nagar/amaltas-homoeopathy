@@ -376,6 +376,7 @@ const Hero = () => {
               />
               Live: 2026–27 Admissions
             </div>
+
           </div>
         </div>
       </Container>

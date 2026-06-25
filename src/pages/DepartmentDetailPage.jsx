@@ -1,6 +1,6 @@
 import React from 'react';
 import { useParams, Link } from 'react-router-dom';
-import { ArrowLeft, CheckCircle2, Package } from 'lucide-react';
+import { ArrowLeft, CheckCircle2, Package, Images } from 'lucide-react';
 import { T, fontDisplay, fontBody } from '../styles/tokens';
 import { DEPARTMENTS } from '../components/home/Departments';
 import { DEPARTMENT_DETAILS } from '../data/departmentDetails';
@@ -268,6 +268,33 @@ const DepartmentDetailPage = () => {
                   </Card>
                 )}
               </div>
+
+              {/* Department Gallery */}
+              {details.photos?.length > 0 && (
+                <Card className="mt-6">
+                  <SectionHeading icon={Images} title="Department Gallery" />
+                  <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
+                    {details.photos.map((src, i) => (
+                      <div
+                        key={i}
+                        style={{
+                          borderRadius: 12,
+                          overflow: 'hidden',
+                          aspectRatio: '4/3',
+                          background: `${T.ink900}08`,
+                        }}
+                      >
+                        <img
+                          src={src}
+                          alt={`${details.name} — photo ${i + 1}`}
+                          loading="lazy"
+                          style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }}
+                        />
+                      </div>
+                    ))}
+                  </div>
+                </Card>
+              )}
 
             </div>
           </Container>
