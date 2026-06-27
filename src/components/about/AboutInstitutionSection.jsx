@@ -35,7 +35,7 @@ const PILLARS = [
 
 const HIGHLIGHTS = [
   'Recognised by the National Commission for Homoeopathy (NCH), New Delhi',
-  'Affiliated with Madhya Pradesh Medical Science University, Jabalpur',
+  'Affiliated with Amaltas Institute',
   'Teaching hospital with daily OPD and multi-speciality clinics',
   'Housed within the multidisciplinary Amaltas Group campus, Dewas',
   'Regular free health camps across Dewas and Ujjain districts',
@@ -375,32 +375,19 @@ export default function AboutInstitutionSection() {
                   boxShadow: `0 20px 50px -10px ${T.ink900}24`,
                 }}
               >
-                <img
-                  src="/campus/students.JPG"
-                  alt="Students providing community healthcare"
+                <video
+                  src="/campus/homoeopathy-video.mp4"
+                  autoPlay
+                  muted
+                  loop
+                  playsInline
                   style={{
                     width: '100%', height: '100%',
                     objectFit: 'cover',
                     objectPosition: 'center top',
                     display: 'block',
-                    transition: 'transform 0.7s ease',
                   }}
-                  draggable="false"
-                  onMouseEnter={e => { e.currentTarget.style.transform = 'scale(1.04)'; }}
-                  onMouseLeave={e => { e.currentTarget.style.transform = 'scale(1)'; }}
                 />
-                <div
-                  style={{
-                    position: 'absolute', bottom: 0, left: 0, right: 0,
-                    padding: '40px 22px 20px',
-                    background: 'linear-gradient(to top, rgba(13,31,24,0.82) 0%, transparent 100%)',
-                    pointerEvents: 'none',
-                  }}
-                >
-                  <p style={{ ...MONO, fontSize: 10, letterSpacing: '0.16em', color: `${T.cream50}CC`, textTransform: 'uppercase', margin: 0 }}>
-                    Clinical training — Teaching Hospital, Amaltas
-                  </p>
-                </div>
               </div>
             </div>
 
@@ -519,11 +506,11 @@ export default function AboutInstitutionSection() {
                   title: 'National Commission for Homoeopathy',
                   body: 'Recognised by the NCH, New Delhi, under the Ministry of AYUSH, Government of India — ensuring our BHMS programme meets the highest national academic and clinical standards.',
                 },
-                {
-                  label: 'MPMSU',
-                  title: 'MP Medical Science University',
-                  body: 'Affiliated with Madhya Pradesh Medical Science University, Jabalpur — the degree-granting authority for all BHMS students enrolled at Amaltas.',
-                },
+                // {
+                //   label: 'MPMSU',
+                //   title: 'MP Medical Science University',
+                //   body: 'Affiliated with Amaltas Institute — the degree-granting authority for all BHMS students enrolled at Amaltas.',
+                // },
                 {
                   label: 'RES',
                   title: 'Research Cell',

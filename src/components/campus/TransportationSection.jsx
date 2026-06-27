@@ -41,8 +41,7 @@ const ROUTES = [
 ];
 
 const NEARBY = [
-  'Sonkatch', 'Kannod', 'Khategaon', 'Bagli',
-  'Tonk Khurd', 'Shujalpur', 'Pigdamber', 'Rau',
+  'Makshi', 'Devli', 'Mahukheda', 'Sonkatch',
 ];
 
 const BUS_IMAGES = [

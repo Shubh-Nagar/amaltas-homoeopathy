@@ -47,8 +47,8 @@ const FacilitiesShowcase = () => {
               className="mt-5 text-[36px] lg:text-[48px] leading-[1.1] tracking-tight font-semibold"
             >
               A campus{' '}
-              <em style={{ color: T.gold700 }}>built for the work</em>{' '}
-              we ask of it.
+              <em style={{ color: T.gold700, marginRight: 10 }}>built for the work</em>
+              {' '}we ask of it.
             </h2>
           </div>
           <p

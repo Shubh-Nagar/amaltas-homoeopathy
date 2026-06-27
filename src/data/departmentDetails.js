@@ -39,6 +39,10 @@ export const DEPARTMENT_DETAILS = {
       '/department%20photos/Anatomy/IMG_3495.JPG.jpeg',
       '/department%20photos/Anatomy/IMG_3501.JPG.jpeg',
       '/department%20photos/Anatomy/IMG_3505.JPG.jpeg',
+      '/department%20photos/Anatomy/WhatsApp%20Image%202026-06-20%20at%2012.14.27%20PM%20(1).jpeg',
+      '/department%20photos/Anatomy/WhatsApp%20Image%202026-06-20%20at%2012.14.27%20PM%20(2).jpeg',
+      '/department%20photos/Anatomy/WhatsApp%20Image%202026-06-20%20at%2012.14.27%20PM.jpeg',
+      '/department%20photos/Anatomy/WhatsApp%20Image%202026-06-20%20at%2012.14.28%20PM.jpeg',
     ],
   },
 

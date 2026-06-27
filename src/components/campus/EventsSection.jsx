@@ -139,7 +139,7 @@ All students and staff signed the anti-ragging declaration form, which was submi
     venue: 'PHC Campus, Ujjain District',
     category: 'Health Camp',
     status: 'Past',
-    image: '/campus/amaltas_photo.jpeg',
+    image: '/campus/amaltas_photo.png',
     excerpt: 'A joint health camp with the local PHC serving underserved communities in Ujjain district — providing free homoeopathic consultation, basic diagnostics, and medicine distribution.',
     content: `In collaboration with the Primary Health Centre, Ujjain District, Amaltas Institute conducted a free health camp on 14th October 2024 serving semi-rural communities with limited access to specialist care.
 

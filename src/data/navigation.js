@@ -22,7 +22,7 @@ export const NAV = [
       { label: 'Admission Details',     href: '/academics/admission-details' },
       { label: 'Admission Procedure',   href: '/admissions/procedure' },
       // { label: 'Fees Structure',        href: '/admissions/fees' },
-      { label: 'Enquiry Form',          href: '#enquiry' },
+      { label: 'Enquiry Form',          href: '/contact' },
       { label: 'Scholarships',          href: '/admissions/scholarships' },
       { label: 'Download Brochure',     href: '/homeopathy brochure.pdf', target: '_blank' },
     ],
@@ -177,7 +177,7 @@ export const CAMPUS_SLIDES = [
       'Curtained examination bays and demonstration charts for systematic clinical-method training — from history-taking to physical examination.',
   },
   {
-    image: '/campus/amaltas_photo.jpeg',
+    image: '/campus/amaltas_photo.png',
     tag: 'Amaltas Group',
     title: 'A Multi-Institutional Campus',
     description:

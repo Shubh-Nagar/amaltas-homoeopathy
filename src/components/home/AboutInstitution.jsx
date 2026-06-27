@@ -112,7 +112,8 @@ const AboutInstitution = () => {
               <p style={{ color: T.ink900 }}>
                 Homoeopathy is a science of dynamised micro-immunology based on the law of
                 analogy — a system recognised internationally and practised in India under the
-                Homoeopathy Central Council Act, 1973. At Amaltas, our students engage with
+                NCH-regulated Standards
+. At Amaltas, our students engage with
                 this lineage from day one through structured coursework, cadaveric and clinical
                 exposure, and a teaching hospital where theory meets the patient.
               </p>

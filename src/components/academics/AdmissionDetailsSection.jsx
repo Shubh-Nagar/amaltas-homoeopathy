@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import {
   GraduationCap, ClipboardList, UserCheck, FileCheck,
-  BookOpen, Percent, CalendarCheck, Users,
+  BookOpen, Percent, CalendarCheck,
   FileText, Download, ExternalLink, AlertCircle, Info,
 } from 'lucide-react';
 import { T, fontDisplay, fontBody } from '../../styles/tokens';
@@ -54,13 +54,6 @@ const DOCUMENTS = [
   { label: 'Aadhar Card', note: 'Original + 1 copy' },
 ];
 
-const RESERVATION = [
-  { category: 'Scheduled Caste (SC)', percent: '15%', accent: '#C0392B' },
-  { category: 'Scheduled Tribe (ST)', percent: '7.5%', accent: '#2E6A8A' },
-  { category: 'Other Backward Classes (OBC)', percent: '27%', accent: T.gold700 },
-  { category: 'Economically Weaker Section (EWS)', percent: '10%', accent: T.forest800 },
-  { category: 'General / Unreserved', percent: '40.5%', accent: T.muted500 },
-];
 
 const slide = (inView, delay = 0) => ({
   opacity:   inView ? 1 : 0,
@@ -71,7 +64,6 @@ const slide = (inView, delay = 0) => ({
 export default function AdmissionDetailsSection() {
   const [heroRef,   heroInView]   = useInView(0.08);
   const [critRef,   critInView]   = useInView(0.05);
-  const [resRef,    resInView]    = useInView(0.05);
   const [docsRef,   docsInView]   = useInView(0.05);
   const [pdfRef,    pdfInView]    = useInView(0.04);
   const [pdfLoaded, setPdfLoaded] = useState(false);
@@ -195,73 +187,6 @@ export default function AdmissionDetailsSection() {
               the merit list prepared on the basis of NEET (UG) scores as per guidelines
               of the Central / State Counselling Authority. Please verify the latest norms
               from the official counselling body for the current session.
-            </p>
-          </div>
-        </Container>
-      </section>
-
-      {/* ══════════════════════  RESERVATION POLICY  ════════════════ */}
-      <section
-        className="py-16 lg:py-24"
-        style={{ background: '#FFFFFF', borderTop: `1px solid ${T.ink900}0E` }}
-      >
-        <Container>
-          <div ref={resRef}>
-            <div className="text-center mb-12" style={slide(resInView, 0)}>
-              <Eyebrow>Seat Matrix</Eyebrow>
-              <h2
-                className="mt-4 text-[30px] lg:text-[42px] leading-[1.1] tracking-tight font-semibold"
-                style={{ ...fontDisplay, color: T.ink900 }}
-              >
-                Reservation{' '}
-                <em style={{ color: T.forest800, fontStyle: 'italic' }}>policy</em>
-              </h2>
-              <p className="mt-3 text-[15px] leading-relaxed max-w-xl mx-auto" style={{ color: T.muted500 }}>
-                Seats are distributed as per the Government of Madhya Pradesh reservation
-                norms and central government directives.
-              </p>
-            </div>
-
-            <div className="max-w-2xl mx-auto rounded-2xl overflow-hidden" style={{ border: `1px solid ${T.ink900}0E`, boxShadow: `0 4px 20px -6px ${T.ink900}0A` }}>
-              <div className="px-6 py-4" style={{ background: T.forest800 }}>
-                <p className="text-[11px] tracking-[0.14em] uppercase font-semibold" style={{ ...MONO, color: `${T.cream50}99` }}>
-                  Category-wise Seat Distribution
-                </p>
-              </div>
-              {RESERVATION.map(({ category, percent, accent }, i) => (
-                <div
-                  key={category}
-                  className="flex items-center justify-between px-6 py-4"
-                  style={{
-                    background: i % 2 === 0 ? T.cream50 : '#FFFFFF',
-                    borderBottom: i < RESERVATION.length - 1 ? `1px solid ${T.ink900}08` : 'none',
-                    opacity:   resInView ? 1 : 0,
-                    transform: resInView ? 'translateX(0)' : 'translateX(-18px)',
-                    transition: `opacity 0.55s ease ${0.07 * i}s, transform 0.55s cubic-bezier(0.22,1,0.36,1) ${0.07 * i}s`,
-                  }}
-                >
-                  <div className="flex items-center gap-3">
-                    <div
-                      className="w-2.5 h-2.5 rounded-full flex-shrink-0"
-                      style={{ background: accent }}
-                    />
-                    <span className="text-[14px]" style={{ color: T.ink900 }}>{category}</span>
-                  </div>
-                  <span
-                    className="text-[15px] font-semibold tabular-nums"
-                    style={{ color: accent, ...MONO }}
-                  >
-                    {percent}
-                  </span>
-                </div>
-              ))}
-            </div>
-
-            <p
-              className="text-center mt-5 text-[12.5px]"
-              style={{ color: T.muted500 }}
-            >
-              Horizontal reservations (PH, ex-servicemen, etc.) apply over and above the above matrix as per state rules.
             </p>
           </div>
         </Container>

@@ -2,7 +2,7 @@ import React from 'react';
 import {
   ShieldCheck, Trophy,
   Landmark, GraduationCap,
-  CalendarDays, Building2, Leaf,
+  CalendarDays, Building2, Leaf, Award,
 } from 'lucide-react';
 import { T, fontDisplay } from '../../styles/tokens';
 import Container from '../ui/Container';
@@ -29,18 +29,32 @@ const RECOGNITIONS = [
     color: T.forest800,
   },
   {
-    icon: Landmark,
-    code: 'MPMSU',
-    title: 'MP Medical Science University',
-    body: 'Affiliated with Madhya Pradesh Medical Science University, Jabalpur — the degree-granting authority for all BHMS students enrolled at Amaltas Institute.',
-    color: T.gold700,
-  },
-  {
     icon: Building2,
     code: 'AYUSH',
     title: 'Ministry of AYUSH',
     body: 'Operating under the framework of the Ministry of AYUSH, Government of India — ensuring our standards align with national policy for traditional and alternative medicine.',
     color: T.forest800,
+  },
+  {
+    icon: Landmark,
+    code: 'NABH',
+    title: 'National Accreditation Board for Hospitals',
+    body: 'Amaltas Teaching Hospital is registered with NABH — the national body for hospital accreditation under the Quality Council of India — benchmarking our clinical care standards against established national quality frameworks.',
+    color: '#1E6B9A',
+  },
+  {
+    icon: GraduationCap,
+    code: 'AISHE',
+    title: 'All India Survey on Higher Education',
+    body: 'Registered under AISHE, conducted by the Department of Higher Education, Ministry of Education — formally capturing Amaltas Institute in India\'s national database of higher education institutions.',
+    color: T.gold700,
+  },
+  {
+    icon: Award,
+    code: 'ISO',
+    title: 'ISO Certified Institution',
+    body: 'Certified to ISO quality management standards — demonstrating our commitment to structured processes, continuous improvement, and internationally benchmarked quality systems across administrative and clinical operations.',
+    color: '#2D7A4F',
   },
 ];
 
@@ -177,12 +191,12 @@ export default function AwardsSection() {
               className="mt-4 text-[16px] leading-relaxed max-w-xl mx-auto"
               style={{ color: T.muted500 }}
             >
-              Amaltas holds recognition from the national statutory and affiliating
-              bodies that regulate homoeopathic medical education in India.
+              Amaltas holds recognition from national statutory bodies, hospital
+              accreditation boards, and international quality standards organisations.
             </p>
           </div>
 
-          <div className="grid sm:grid-cols-3 gap-6">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {RECOGNITIONS.map(({ icon: Icon, code, title, body, color }, i) => (
               <div
                 key={code}

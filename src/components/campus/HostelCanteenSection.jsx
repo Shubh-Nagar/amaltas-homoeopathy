@@ -46,8 +46,8 @@ const PhotoSlot = ({ src, alt, aspect = '4/3', icon: Icon = Home, label }) => (
 );
 
 /* ── Hostel images — replace null with '/hostel/...' once uploaded ── */
-const BOYS_IMAGES  = [null, null, null];
-const GIRLS_IMAGES = [null, null, null];
+const BOYS_IMAGES  = ['/campus/boys-hostel.jpeg', null, null];
+const GIRLS_IMAGES = ['/campus/girls-hostel.jpeg', null, null];
 const CANTEEN_IMAGES = [null, null];
 const SHOPS_IMAGES   = [null, null];
 
@@ -58,6 +58,11 @@ const HOSTEL_FEATURES = [
   'Hot water facility',
   'Wi-Fi connectivity',
   'Warden available on campus',
+];
+
+const BOYS_HOSTEL_FEATURES = [
+  ...HOSTEL_FEATURES,
+  'Gym facility',
 ];
 
 const MEALS = [
@@ -200,7 +205,7 @@ export default function HostelCanteenSection() {
               </p>
 
               <ul className="mt-6 grid grid-cols-1 sm:grid-cols-2 gap-y-3 gap-x-4">
-                {HOSTEL_FEATURES.map(f => (
+                {BOYS_HOSTEL_FEATURES.map(f => (
                   <li key={f} className="flex items-start gap-2.5">
                     <CheckCircle2 size={15} strokeWidth={2} style={{ color: T.forest600, flexShrink: 0, marginTop: 2 }} />
                     <span className="text-[13.5px] leading-snug" style={{ color: T.ink900 }}>{f}</span>
@@ -221,15 +226,8 @@ export default function HostelCanteenSection() {
             </div>
 
             {/* Photos */}
-            <div
-              className="grid grid-cols-2 gap-3"
-              style={slide(boysInView, 0.12, 'right')}
-            >
-              <div className="col-span-2">
-                <PhotoSlot src={BOYS_IMAGES[0]} alt="Boys hostel" aspect="16/9" icon={Home} label="Boys Hostel — Photo coming soon" />
-              </div>
-              <PhotoSlot src={BOYS_IMAGES[1]} alt="Boys hostel room" aspect="4/3" icon={Home} label="Room" />
-              <PhotoSlot src={BOYS_IMAGES[2]} alt="Boys hostel common area" aspect="4/3" icon={Users} label="Common Area" />
+            <div style={slide(boysInView, 0.12, 'right')}>
+              <PhotoSlot src={BOYS_IMAGES[0]} alt="Boys hostel" aspect="16/9" icon={Home} label="Boys Hostel — Photo coming soon" />
             </div>
           </div>
         </Container>
@@ -244,15 +242,8 @@ export default function HostelCanteenSection() {
           <div ref={girlsRef} className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
 
             {/* Photos — left on this row */}
-            <div
-              className="grid grid-cols-2 gap-3 order-2 lg:order-1"
-              style={slide(girlsInView, 0, 'left')}
-            >
-              <div className="col-span-2">
-                <PhotoSlot src={GIRLS_IMAGES[0]} alt="Girls hostel" aspect="16/9" icon={Home} label="Girls Hostel — Photo coming soon" />
-              </div>
-              <PhotoSlot src={GIRLS_IMAGES[1]} alt="Girls hostel room" aspect="4/3" icon={Home} label="Room" />
-              <PhotoSlot src={GIRLS_IMAGES[2]} alt="Girls hostel common area" aspect="4/3" icon={Users} label="Common Area" />
+            <div className="order-2 lg:order-1" style={slide(girlsInView, 0, 'left')}>
+              <PhotoSlot src={GIRLS_IMAGES[0]} alt="Girls hostel" aspect="16/9" icon={Home} label="Girls Hostel — Photo coming soon" />
             </div>
 
             {/* Text — right on this row */}
@@ -313,15 +304,6 @@ export default function HostelCanteenSection() {
             </p>
           </div>
 
-          {/* Canteen photos */}
-          <div
-            className="grid grid-cols-2 gap-3 mb-12 max-w-2xl mx-auto"
-            style={slide(canteenInView, 0.08)}
-          >
-            <PhotoSlot src={CANTEEN_IMAGES[0]} alt="Canteen" aspect="16/9" icon={UtensilsCrossed} label="Canteen — Photo coming soon" />
-            <PhotoSlot src={CANTEEN_IMAGES[1]} alt="Canteen food" aspect="16/9" icon={UtensilsCrossed} label="Dining Area" />
-          </div>
-
           {/* Meal cards */}
           <div className="grid md:grid-cols-3 gap-5">
             {MEALS.map(({ icon: Icon, label, time, items, color }, i) => (
@@ -379,60 +361,47 @@ export default function HostelCanteenSection() {
         style={{ background: `${T.forest800}07`, borderTop: `1px solid ${T.forest800}0F` }}
       >
         <Container>
-          <div ref={shopsRef} className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-start">
-
-            {/* Text + shop cards */}
-            <div>
-              <div style={slide(shopsInView, 0)}>
-                <Eyebrow>Campus Amenities</Eyebrow>
-                <h2
-                  className="mt-4 text-[28px] lg:text-[38px] leading-[1.1] tracking-tight font-semibold"
-                  style={{ ...fontDisplay, color: T.ink900 }}
-                >
-                  Local shops &{' '}
-                  <em style={{ color: T.gold700, fontStyle: 'italic' }}>daily essentials</em>
-                </h2>
-                <p className="mt-4 text-[15px] leading-[1.85]" style={{ color: T.muted500 }}>
-                  Beyond the main canteen, the campus has a variety of local shops catering
-                  to students' food preferences and daily requirements — so everything you
-                  need is just steps away.
-                </p>
-              </div>
-
-              <div className="mt-8 grid sm:grid-cols-2 gap-4">
-                {SHOPS.map(({ icon: Icon, label, desc }, i) => (
-                  <div
-                    key={label}
-                    className="rounded-2xl p-5"
-                    style={{
-                      background: '#FFFFFF',
-                      border: `1px solid ${T.ink900}0D`,
-                      boxShadow: `0 2px 12px -4px ${T.ink900}08`,
-                      opacity:   shopsInView ? 1 : 0,
-                      transform: shopsInView ? 'translateY(0)' : 'translateY(20px)',
-                      transition: `opacity 0.65s ease ${i * 0.08}s, transform 0.65s cubic-bezier(0.22,1,0.36,1) ${i * 0.08}s`,
-                    }}
-                  >
-                    <div
-                      className="w-10 h-10 rounded-xl flex items-center justify-center mb-3"
-                      style={{ background: `${T.gold600}14` }}
-                    >
-                      <Icon size={18} strokeWidth={1.8} style={{ color: T.gold700 }} />
-                    </div>
-                    <div className="text-[15px] font-semibold mb-1.5" style={{ ...fontDisplay, color: T.ink900 }}>{label}</div>
-                    <p className="text-[13px] leading-[1.7]" style={{ color: T.muted500 }}>{desc}</p>
-                  </div>
-                ))}
-              </div>
+          <div ref={shopsRef}>
+            <div style={slide(shopsInView, 0)}>
+              <Eyebrow>Campus Amenities</Eyebrow>
+              <h2
+                className="mt-4 text-[28px] lg:text-[38px] leading-[1.1] tracking-tight font-semibold"
+                style={{ ...fontDisplay, color: T.ink900 }}
+              >
+                Local shops &{' '}
+                <em style={{ color: T.gold700, fontStyle: 'italic' }}>daily essentials</em>
+              </h2>
+              <p className="mt-4 text-[15px] leading-[1.85]" style={{ color: T.muted500 }}>
+                Beyond the main canteen, the campus has a variety of local shops catering
+                to students' food preferences and daily requirements — so everything you
+                need is just steps away.
+              </p>
             </div>
 
-            {/* Shop photos */}
-            <div
-              className="flex flex-col gap-3"
-              style={slide(shopsInView, 0.12, 'right')}
-            >
-              <PhotoSlot src={SHOPS_IMAGES[0]} alt="Campus shops" aspect="16/9" icon={Store} label="Campus Shops — Photo coming soon" />
-              <PhotoSlot src={SHOPS_IMAGES[1]} alt="Campus tuck shop" aspect="16/9" icon={ShoppingBag} label="Tuck Shop" />
+            <div className="mt-8 grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
+              {SHOPS.map(({ icon: Icon, label, desc }, i) => (
+                <div
+                  key={label}
+                  className="rounded-2xl p-5"
+                  style={{
+                    background: '#FFFFFF',
+                    border: `1px solid ${T.ink900}0D`,
+                    boxShadow: `0 2px 12px -4px ${T.ink900}08`,
+                    opacity:   shopsInView ? 1 : 0,
+                    transform: shopsInView ? 'translateY(0)' : 'translateY(20px)',
+                    transition: `opacity 0.65s ease ${i * 0.08}s, transform 0.65s cubic-bezier(0.22,1,0.36,1) ${i * 0.08}s`,
+                  }}
+                >
+                  <div
+                    className="w-10 h-10 rounded-xl flex items-center justify-center mb-3"
+                    style={{ background: `${T.gold600}14` }}
+                  >
+                    <Icon size={18} strokeWidth={1.8} style={{ color: T.gold700 }} />
+                  </div>
+                  <div className="text-[15px] font-semibold mb-1.5" style={{ ...fontDisplay, color: T.ink900 }}>{label}</div>
+                  <p className="text-[13px] leading-[1.7]" style={{ color: T.muted500 }}>{desc}</p>
+                </div>
+              ))}
             </div>
           </div>
         </Container>

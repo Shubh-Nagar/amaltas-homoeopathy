@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import {
   Award, BookOpen, Users, BadgeCheck,
-  FileText, Download, ExternalLink,
+  FileText, ExternalLink,
   AlertCircle, ChevronDown, ChevronUp, Info,
 } from 'lucide-react';
 import { T, fontDisplay, fontBody } from '../../styles/tokens';
@@ -390,21 +390,6 @@ export default function ScholarshipSection() {
                   <ExternalLink size={14} strokeWidth={2} />
                   Open in new tab
                 </a>
-                <a
-                  href={PDF_URL}
-                  download="Scholarship_Rules_and_Regulations_Amaltas.pdf"
-                  className="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl text-[13px] font-semibold transition-all duration-200"
-                  style={{
-                    background: T.forest800,
-                    color: T.cream50,
-                    textDecoration: 'none',
-                  }}
-                  onMouseEnter={e => { e.currentTarget.style.background = T.forest600; }}
-                  onMouseLeave={e => { e.currentTarget.style.background = T.forest800; }}
-                >
-                  <Download size={14} strokeWidth={2.2} />
-                  Download PDF
-                </a>
               </div>
             </div>
 
@@ -460,15 +445,6 @@ export default function ScholarshipSection() {
                       >
                         <ExternalLink size={14} />
                         Open in new tab
-                      </a>
-                      <a
-                        href={PDF_URL}
-                        download="Scholarship_Rules_and_Regulations_Amaltas.pdf"
-                        className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl text-[13px] font-semibold"
-                        style={{ background: T.forest800, color: T.cream50, textDecoration: 'none' }}
-                      >
-                        <Download size={14} />
-                        Download PDF
                       </a>
                     </div>
                   </div>

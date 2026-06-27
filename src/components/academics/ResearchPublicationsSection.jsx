@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Download, ExternalLink, FileText, Microscope } from 'lucide-react';
+import { ExternalLink, FileText, Microscope } from 'lucide-react';
 import { T, fontDisplay } from '../../styles/tokens';
 import Container from '../ui/Container';
 import Eyebrow from '../ui/Eyebrow';
@@ -85,16 +85,6 @@ export default function ResearchPublicationsSection() {
               <div className="flex items-center gap-2 flex-shrink-0">
                 <a
                   href={PDF_URL}
-                  download="Research Publication.pdf"
-                  className="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl text-[13px] font-semibold transition-all duration-200"
-                  style={{ background: `${T.forest800}0E`, border: `1px solid ${T.forest800}20`, color: T.forest800, textDecoration: 'none' }}
-                  title="Download PDF"
-                >
-                  <Download size={14} strokeWidth={2} />
-                  Download
-                </a>
-                <a
-                  href={PDF_URL}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl text-[13px] font-semibold transition-all duration-200"
@@ -134,7 +124,7 @@ export default function ResearchPublicationsSection() {
                     Unable to preview in browser
                   </p>
                   <p className="text-[14px]" style={{ color: T.muted500 }}>
-                    Use the Download or Open in new tab buttons above to view the PDF.
+                    Use the Open in new tab button above to view the PDF.
                   </p>
                 </div>
               ) : (

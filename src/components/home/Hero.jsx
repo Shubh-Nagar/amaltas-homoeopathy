@@ -250,7 +250,7 @@ const Hero = () => {
               The Amaltas Institute of Homoeopathy nurtures a new generation of physicians
               grounded in the{' '}
               <em style={{ color: T.gold100, fontStyle: 'normal', fontWeight: 500 }}>
-                Similia Similibus Curantur
+                Similia Similibus Curentur
               </em>{' '}
               principle — combining rigorous clinical training with compassionate,
               research-driven practice.

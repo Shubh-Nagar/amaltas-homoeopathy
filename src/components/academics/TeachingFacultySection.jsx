@@ -373,9 +373,9 @@ export default function TeachingFacultySection() {
             <em style={{ color: T.gold100, fontStyle: 'italic' }}>NCH-qualified</em>
             {' '}and dedicated to clinical excellence in teaching.
           </p>
-          <p className="mt-4 text-[14px]" style={{ color: `${T.cream50}66` }}>
+          {/* <p className="mt-4 text-[14px]" style={{ color: `${T.cream50}66` }}>
             Amaltas Institute of Homoeopathy · Affiliated to MP Medical Science University, Jabalpur
-          </p>
+          </p> */}
         </Container>
       </section>
     </>

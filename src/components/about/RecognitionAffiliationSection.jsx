@@ -19,17 +19,17 @@ const DOCUMENTS = [
     src: '/documents/Consent of Affiliation (1).pdf',
     color: T.forest800,
   },
-  {
-    id: 'university',
-    icon: Landmark,
-    tag: 'Affiliation',
-    title: 'University Affiliation',
-    subtitle: 'Issued by MP Medical Science University, Jabalpur · 2025–26',
-    description:
-      'The University Affiliation certificate issued to Amaltas Institute by Madhya Pradesh Medical Science University (MPMSU), Jabalpur — the statutory affiliating and degree-granting authority for the BHMS programme under which Amaltas students are registered and examined.',
-    src: '/documents/University Affiliation 2025-26 (1).pdf',
-    color: T.gold700,
-  },
+  // {
+  //   id: 'university',
+  //   icon: Landmark,
+  //   tag: 'Affiliation',
+  //   title: 'University Affiliation',
+  //   subtitle: 'Issued by MP Medical Science University, Jabalpur · 2025–26',
+  //   description:
+  //     'The University Affiliation certificate issued to Amaltas Institute by Madhya Pradesh Medical Science University (MPMSU), Jabalpur — the statutory affiliating and degree-granting authority for the BHMS programme under which Amaltas students are registered and examined.',
+  //   src: '/documents/University Affiliation 2025-26 (1).pdf',
+  //   color: T.gold700,
+  // },
 ];
 
 /* Blocks right-click and pointer events on the iframe so the browser PDF
@@ -192,7 +192,7 @@ export default function RecognitionAffiliationSection() {
             >
               Official documents confirming Amaltas Institute's recognition by the
               National Commission for Homoeopathy and its affiliation with
-              Madhya Pradesh Medical Science University, Jabalpur.
+              Amaltas Institute.
             </p>
             <div
               className="mt-7 flex items-center justify-center gap-2 text-[12px] tracking-[0.18em] uppercase"

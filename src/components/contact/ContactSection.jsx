@@ -59,31 +59,81 @@ const InfoCard = ({ icon: Icon, label, lines, accent = T.forest800, delay = 0, i
 
 // ─── Contact form ─────────────────────────────────────────────────────
 const ContactForm = ({ inView }) => {
-  const [form,    setForm]    = useState({ name: '', email: '', phone: '', subject: '', message: '' });
-  const [status,  setStatus]  = useState(null); // null | 'sending' | 'sent' | 'error'
+  const [form,   setForm]   = useState({ name: '', email: '', phone: '', subject: '', message: '' });
+  const [errors, setErrors] = useState({});
+  const [status, setStatus] = useState(null); // null | 'sending' | 'sent'
 
-  const handleChange = (e) => setForm(f => ({ ...f, [e.target.name]: e.target.value }));
+  const validate = () => {
+    const e = {};
+    if (!form.name.trim())                              e.name    = 'Full name is required.';
+    if (!form.email.trim())                             e.email   = 'Email address is required.';
+    else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(form.email)) e.email = 'Enter a valid email address.';
+    if (!form.phone.trim())                             e.phone   = 'Phone number is required.';
+    else if (!/^\d{10}$/.test(form.phone))              e.phone   = 'Enter a valid 10-digit number.';
+    if (!form.subject)                                  e.subject = 'Please select a subject.';
+    if (!form.message.trim())                           e.message = 'Message is required.';
+    else if (form.message.length > 500)                 e.message = 'Message must be 500 characters or fewer.';
+    return e;
+  };
 
-  const handleSubmit = async (e) => {
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    if (name === 'phone' && value && !/^\d*$/.test(value)) return; // digits only
+    setForm(f => ({ ...f, [name]: value }));
+    if (errors[name]) setErrors(prev => ({ ...prev, [name]: undefined }));
+  };
+
+  const handleSubmit = (e) => {
     e.preventDefault();
+    const errs = validate();
+    if (Object.keys(errs).length) { setErrors(errs); return; }
+
     setStatus('sending');
-    // Simulate submission — replace with real API call when backend is ready
-    await new Promise(r => setTimeout(r, 1200));
+
+    const subjectLabels = {
+      admissions: 'Admissions / BHMS Enquiry',
+      fees:       'Fees Structure',
+      hospital:   'Hospital Services',
+      academics:  'Academic Programmes',
+      hostel:     'Hostel & Facilities',
+      other:      'Other',
+    };
+
+    const text = [
+      `*New Enquiry — Amaltas Institute of Homoeopathy*`,
+      ``,
+      `*Name:* ${form.name}`,
+      `*Phone:* ${form.phone}`,
+      `*Email:* ${form.email}`,
+      `*Subject:* ${subjectLabels[form.subject] || form.subject}`,
+      ``,
+      `*Message:*`,
+      form.message,
+    ].join('\n');
+
+    window.open(`https://wa.me/919685096500?text=${encodeURIComponent(text)}`, '_blank', 'noopener,noreferrer');
     setStatus('sent');
   };
 
-  const inputBase = {
+  const inputStyle = (field) => ({
     width: '100%',
     padding: '12px 16px',
     borderRadius: 12,
-    border: `1.5px solid ${T.ink900}12`,
-    background: `${T.forest800}04`,
+    border: `1.5px solid ${errors[field] ? '#DC2626' : `${T.ink900}12`}`,
+    background: errors[field] ? '#FEF2F2' : `${T.forest800}04`,
     color: T.ink900,
     fontSize: 15,
     outline: 'none',
-    transition: 'border-color 0.2s',
+    transition: 'border-color 0.2s, background 0.2s',
     fontFamily: 'inherit',
-  };
+  });
+
+  const ErrorMsg = ({ field }) => errors[field] ? (
+    <p className="mt-1.5 text-[12px] flex items-center gap-1" style={{ color: '#DC2626' }}>
+      <AlertCircle size={12} strokeWidth={2} />
+      {errors[field]}
+    </p>
+  ) : null;
 
   const Label = ({ children, htmlFor }) => (
     <label
@@ -108,15 +158,15 @@ const ContactForm = ({ inView }) => {
           <CheckCircle2 size={32} strokeWidth={1.8} style={{ color: T.forest800 }} />
         </div>
         <h3 className="text-[22px] font-semibold mb-3" style={{ ...fontDisplay, color: T.ink900 }}>
-          Message received
+          Message sent on WhatsApp
         </h3>
         <p className="text-[15px] leading-relaxed max-w-xs" style={{ color: T.muted500 }}>
-          Thank you for reaching out. Our admissions team will get back to you within 1–2 working days.
+          Your enquiry has been opened in WhatsApp. Our admissions team will get back to you shortly.
         </p>
         <button
           className="mt-8 text-[13px] font-semibold underline underline-offset-2"
           style={{ color: T.forest800, background: 'none', border: 'none', cursor: 'pointer' }}
-          onClick={() => { setStatus(null); setForm({ name: '', email: '', phone: '', subject: '', message: '' }); }}
+          onClick={() => { setStatus(null); setForm({ name: '', email: '', phone: '', subject: '', message: '' }); setErrors({}); }}
         >
           Send another message
         </button>
@@ -127,6 +177,7 @@ const ContactForm = ({ inView }) => {
   return (
     <form
       onSubmit={handleSubmit}
+      noValidate
       style={{
         opacity: inView ? 1 : 0,
         transform: inView ? 'translateX(0)' : 'translateX(-24px)',
@@ -138,23 +189,26 @@ const ContactForm = ({ inView }) => {
           <Label htmlFor="name">Full Name</Label>
           <input
             id="name" name="name" type="text"
-            required placeholder="Your full name"
+            placeholder="Your full name"
             value={form.name} onChange={handleChange}
-            style={inputBase}
-            onFocus={e => { e.target.style.borderColor = T.forest800; }}
-            onBlur={e => { e.target.style.borderColor = `${T.ink900}12`; }}
+            style={inputStyle('name')}
+            onFocus={e => { if (!errors.name) e.target.style.borderColor = T.forest800; }}
+            onBlur={e =>  { if (!errors.name) e.target.style.borderColor = `${T.ink900}12`; }}
           />
+          <ErrorMsg field="name" />
         </div>
         <div>
           <Label htmlFor="phone">Phone Number</Label>
           <input
             id="phone" name="phone" type="tel"
             placeholder="10-digit mobile number"
+            maxLength={10}
             value={form.phone} onChange={handleChange}
-            style={inputBase}
-            onFocus={e => { e.target.style.borderColor = T.forest800; }}
-            onBlur={e => { e.target.style.borderColor = `${T.ink900}12`; }}
+            style={inputStyle('phone')}
+            onFocus={e => { if (!errors.phone) e.target.style.borderColor = T.forest800; }}
+            onBlur={e =>  { if (!errors.phone) e.target.style.borderColor = `${T.ink900}12`; }}
           />
+          <ErrorMsg field="phone" />
         </div>
       </div>
 
@@ -162,23 +216,23 @@ const ContactForm = ({ inView }) => {
         <Label htmlFor="email">Email Address</Label>
         <input
           id="email" name="email" type="email"
-          required placeholder="you@example.com"
+          placeholder="you@example.com"
           value={form.email} onChange={handleChange}
-          style={inputBase}
-          onFocus={e => { e.target.style.borderColor = T.forest800; }}
-          onBlur={e => { e.target.style.borderColor = `${T.ink900}12`; }}
+          style={inputStyle('email')}
+          onFocus={e => { if (!errors.email) e.target.style.borderColor = T.forest800; }}
+          onBlur={e =>  { if (!errors.email) e.target.style.borderColor = `${T.ink900}12`; }}
         />
+        <ErrorMsg field="email" />
       </div>
 
       <div className="mb-4">
         <Label htmlFor="subject">Subject</Label>
         <select
           id="subject" name="subject"
-          required
           value={form.subject} onChange={handleChange}
-          style={{ ...inputBase, color: form.subject ? T.ink900 : T.muted500 }}
-          onFocus={e => { e.target.style.borderColor = T.forest800; }}
-          onBlur={e => { e.target.style.borderColor = `${T.ink900}12`; }}
+          style={{ ...inputStyle('subject'), color: form.subject ? T.ink900 : T.muted500 }}
+          onFocus={e => { if (!errors.subject) e.target.style.borderColor = T.forest800; }}
+          onBlur={e =>  { if (!errors.subject) e.target.style.borderColor = `${T.ink900}12`; }}
         >
           <option value="" disabled>Select a topic…</option>
           <option value="admissions">Admissions / BHMS Enquiry</option>
@@ -188,19 +242,29 @@ const ContactForm = ({ inView }) => {
           <option value="hostel">Hostel & Facilities</option>
           <option value="other">Other</option>
         </select>
+        <ErrorMsg field="subject" />
       </div>
 
       <div className="mb-6">
-        <Label htmlFor="message">Message</Label>
+        <div className="flex items-center justify-between mb-1.5">
+          <Label htmlFor="message">Message</Label>
+          <span
+            className="text-[12px]"
+            style={{ color: form.message.length > 500 ? '#DC2626' : T.muted500 }}
+          >
+            {form.message.length}/500
+          </span>
+        </div>
         <textarea
           id="message" name="message"
-          required rows={5}
+          rows={5}
           placeholder="Write your message here…"
           value={form.message} onChange={handleChange}
-          style={{ ...inputBase, resize: 'vertical', lineHeight: 1.7 }}
-          onFocus={e => { e.target.style.borderColor = T.forest800; }}
-          onBlur={e => { e.target.style.borderColor = `${T.ink900}12`; }}
+          style={{ ...inputStyle('message'), resize: 'vertical', lineHeight: 1.7 }}
+          onFocus={e => { if (!errors.message) e.target.style.borderColor = T.forest800; }}
+          onBlur={e =>  { if (!errors.message) e.target.style.borderColor = `${T.ink900}12`; }}
         />
+        <ErrorMsg field="message" />
       </div>
 
       <button
@@ -218,7 +282,7 @@ const ContactForm = ({ inView }) => {
         onMouseLeave={e => { if (status !== 'sending') e.currentTarget.style.background = T.forest800; }}
       >
         <Send size={16} strokeWidth={2} />
-        {status === 'sending' ? 'Sending…' : 'Send Message'}
+        {status === 'sending' ? 'Opening WhatsApp…' : 'Send Message'}
       </button>
 
       <p className="mt-4 text-center text-[12px]" style={{ color: T.muted500 }}>

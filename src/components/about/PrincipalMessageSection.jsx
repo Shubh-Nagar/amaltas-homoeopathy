@@ -16,7 +16,7 @@ const MESSAGE_PARAGRAPHS = [
   },
   {
     heading: 'A Name That Carries Weight',
-    text: "In the short time since its founding in 2020, Amaltas has established itself as a name that carries genuine weight in the world of homoeopathic healthcare and education in central India. We are recognised by the National Commission for Homoeopathy, affiliated with Madhya Pradesh Medical Science University, and equipped with the clinical infrastructure needed to produce graduates who are ready for independent practice from their very first day. But what makes Amaltas truly remarkable is not our infrastructure alone — it is the culture of seriousness and care that runs through every interaction here: between faculty and students, between physicians and patients, and between this institution and the community it serves.",
+    text: "In the short time since its founding in 2020, Amaltas has established itself as a name that carries genuine weight in the world of homoeopathic healthcare and education in central India. We are recognised by the National Commission for Homoeopathy, affiliated with Amaltas Institute, and equipped with the clinical infrastructure needed to produce graduates who are ready for independent practice from their very first day. But what makes Amaltas truly remarkable is not our infrastructure alone — it is the culture of seriousness and care that runs through every interaction here: between faculty and students, between physicians and patients, and between this institution and the community it serves.",
     dark: false,
   },
   {

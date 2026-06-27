@@ -103,7 +103,7 @@ The Head of Department of Repertory, Dr. Shehla Jaffri, who coached the team, cr
     date: '5 January 2025',
     author: 'Admissions Office',
     category: 'Admissions',
-    image: '/campus/amaltas_photo.jpeg',
+    image: '/campus/amaltas_photo.png',
     excerpt: "Applications are now open for the BHMS Degree Programme 2025–26 at Amaltas Institute of Homoeopathy. Eligible NEET-qualified candidates must apply through the official MPMSU counselling portal.",
     content: `Amaltas Institute of Homoeopathy, Hospital and Research Centre is pleased to announce that admissions for the Bachelor of Homoeopathic Medicine and Surgery (BHMS) Degree Programme for the academic year 2025–26 are now open.
 

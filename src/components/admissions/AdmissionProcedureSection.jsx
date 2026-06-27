@@ -55,7 +55,7 @@ const STEPS = [
 const DOCUMENTS = [
   {
     icon: FileText,
-    label: 'NEET Marksheet',
+    label: 'NEET Score card',
     note: 'Print copy',
     required: 'Photocopy · Self-attested',
   },
@@ -63,13 +63,13 @@ const DOCUMENTS = [
     icon: FileText,
     label: '12th Marksheet',
     note: 'Class XII board result',
-    required: 'Original',
+    required: 'Original for verification',
   },
   {
     icon: FileText,
     label: '10th Marksheet',
     note: 'Class X board result',
-    required: 'Original',
+    required: 'Original for verification',
   },
   {
     icon: FileText,
@@ -81,7 +81,7 @@ const DOCUMENTS = [
     icon: FileText,
     label: 'Birth Certificate',
     note: 'Municipal / hospital issued',
-    required: 'Original',
+    required: 'Original for verification',
   },
   {
     icon: FileText,
