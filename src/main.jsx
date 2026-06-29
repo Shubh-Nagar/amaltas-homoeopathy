@@ -1,6 +1,12 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import ReactDOM from 'react-dom/client';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom';
+
+function ScrollToTop() {
+  const { pathname } = useLocation();
+  useEffect(() => { window.scrollTo(0, 0); }, [pathname]);
+  return null;
+}
 import App                    from './App';
 import DepartmentsPage         from './pages/DepartmentsPage';
 import DepartmentDetailPage    from './pages/DepartmentDetailPage';
@@ -37,6 +43,7 @@ import './styles/index.css';
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
     <BrowserRouter>
+      <ScrollToTop />
       <Routes>
         <Route path="/"                                   element={<App />} />
         <Route path="/about/institution"                  element={<AboutInstitutionPage />} />

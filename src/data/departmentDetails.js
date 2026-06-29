@@ -433,7 +433,10 @@ export const DEPARTMENT_DETAILS = {
     ],
 
     photos: [
-      '/department%20photos/11%20Practice%20of%20Medicine/IMG_1730.JPG',
+      // '/department%20photos/11%20Practice%20of%20Medicine/IMG_1730.JPG',
+      '/department%20photos/11%20Practice%20of%20Medicine/IMG_3034.jpg',
+      '/department%20photos/11%20Practice%20of%20Medicine/IMG_3035.jpg',
+      '/department%20photos/11%20Practice%20of%20Medicine/IMG_3047.jpg',
       '/department%20photos/11%20Practice%20of%20Medicine/IMG_5674.JPG',
       '/department%20photos/11%20Practice%20of%20Medicine/WhatsApp%20Image%202026-06-20%20at%203.29.24%20PM%20(1).jpeg',
       '/department%20photos/11%20Practice%20of%20Medicine/WhatsApp%20Image%202026-06-20%20at%203.29.28%20PM%20(1).jpeg',

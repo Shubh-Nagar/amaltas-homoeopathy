@@ -364,18 +364,35 @@ export default function TeachingFacultySection() {
       {/* ═════════════════════  CLOSING STRIP  ════════════════════════ */}
       <section className="py-16 relative overflow-hidden" style={{ background: T.forest800 }}>
         <div style={{ position: 'absolute', inset: 0, backgroundImage: `radial-gradient(circle, ${T.gold600}12 1px, transparent 1px)`, backgroundSize: '40px 40px', pointerEvents: 'none' }} />
-        <Container className="relative text-center">
-          <div className="w-14 h-14 rounded-full flex items-center justify-center mx-auto mb-5" style={{ background: `${T.gold100}18`, border: `1px solid ${T.gold100}30` }}>
-            <GraduationCap size={22} strokeWidth={1.6} style={{ color: T.gold100 }} />
+        <Container className="relative">
+          <div
+            className="max-w-3xl mx-auto rounded-2xl px-8 py-10 sm:px-12 sm:py-12 text-center"
+            style={{
+              background: `linear-gradient(135deg, ${T.gold100}18 0%, ${T.gold600}14 100%)`,
+              boxShadow: `0 20px 60px -12px ${T.ink900}60`,
+            }}
+          >
+            <div
+              className="w-14 h-14 rounded-full flex items-center justify-center mx-auto mb-5"
+              style={{ background: T.gold600, boxShadow: `0 4px 16px -4px ${T.ink900}50` }}
+            >
+              <GraduationCap size={22} strokeWidth={1.6} style={{ color: T.cream50 }} />
+            </div>
+            <p
+              className="text-[11px] tracking-[0.2em] uppercase mb-4"
+              style={{ ...MONO, color: T.gold100 }}
+            >
+              Faculty Standard
+            </p>
+            <p
+              className="text-[22px] sm:text-[28px] font-semibold leading-snug"
+              style={{ ...fontDisplay, color: '#FFFFFF' }}
+            >
+              Every faculty member is{' '}
+              <em style={{ color: T.gold100, fontStyle: 'italic' }}>NCH-qualified</em>
+              {' '}and dedicated to clinical excellence in teaching.
+            </p>
           </div>
-          <p className="text-[22px] sm:text-[28px] font-semibold max-w-2xl mx-auto leading-snug" style={{ ...fontDisplay, color: '#FFFFFF' }}>
-            Every faculty member is{' '}
-            <em style={{ color: T.gold100, fontStyle: 'italic' }}>NCH-qualified</em>
-            {' '}and dedicated to clinical excellence in teaching.
-          </p>
-          {/* <p className="mt-4 text-[14px]" style={{ color: `${T.cream50}66` }}>
-            Amaltas Institute of Homoeopathy · Affiliated to MP Medical Science University, Jabalpur
-          </p> */}
         </Container>
       </section>
     </>
