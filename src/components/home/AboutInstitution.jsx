@@ -130,21 +130,22 @@ const AboutInstitution = () => {
           >
             <div style={slide(rightInView, 0.1)}>
               <p style={{ color: T.ink900 }}>
-                Homoeopathy is a science of dynamised micro-immunology based on the law of
-                analogy — a system recognised internationally and practised in India under the
-                NCH-regulated Standards
-. At Amaltas, our students engage with
-                this lineage from day one through structured coursework, cadaveric and clinical
-                exposure, and a teaching hospital where theory meets the patient.
+                Founded by Dr. Christian Friedrich Samuel Hahnemann in 18th-century Germany,
+                homoeopathy is a science of dynamised micro-immunology rooted in the law of
+                similars — the principle Hahnemann codified in his <em>Organon of Medicine</em>{' '}
+                and one now practised internationally under NCH-regulated standards in India.
+                At Amaltas, students engage with this legacy from day one through structured
+                coursework, cadaveric and clinical exposure, and a teaching hospital where his
+                doctrine meets the living patient.
               </p>
             </div>
 
             <div style={slide(rightInView, 0.2)}>
               <p style={{ color: T.muted500 }}>
-                We sit within the wider Amaltas Group campus in Dewas, Madhya Pradesh —
-                sharing infrastructure with sister institutions of medical, nursing, ayurvedic
-                and paramedical sciences. The result is a multidisciplinary learning environment
-                uncommon for a homoeopathy college.
+                Amaltas Institute is part of the broader Amaltas Group campus in Dewas,
+                Madhya Pradesh — integrated with sister colleges of medicine, nursing, ayurveda,
+                and paramedical sciences. This shared infrastructure creates a multidisciplinary
+                learning environment that few stand-alone homoeopathy colleges can offer.
               </p>
             </div>
 
