@@ -100,6 +100,26 @@ const AboutInstitution = () => {
                   Amaltas Campus · Dewas, M.P.
                 </div>
               </div>
+
+              {/* samuel1 accent image — overlays bottom-right of hexagon */}
+              <img
+                src="/samuel1.jpg"
+                alt="Amaltas Institute"
+                draggable="false"
+                style={{
+                  position:     'absolute',
+                  bottom:       '6%',
+                  right:        '-6%',
+                  width:        '42%',
+                  aspectRatio:  '1 / 1',
+                  borderRadius: '50%',
+                  border:       `3px solid ${T.cream50}`,
+                  boxShadow:    '0 10px 36px rgba(0,0,0,0.22)',
+                  objectFit:    'cover',
+                  display:      'block',
+                  zIndex:       2,
+                }}
+              />
             </div>
           </div>
 
