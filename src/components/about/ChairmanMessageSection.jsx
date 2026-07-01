@@ -126,14 +126,14 @@ export default function ChairmanMessageSection() {
               >
                 <img
                   src="/leadership/chairman.jpg"
-                  alt="Shri Mayankraj S. Bhadoria"
+                  alt="Shri Mayankraj Bhadoria"
                   style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center top' }}
                   draggable="false"
                 />
               </div>
               <div>
                 <div className="text-[18px] font-semibold" style={{ ...fontDisplay, color: '#FFFFFF' }}>
-                  Shri Mayankraj S. Bhadoria
+                  Shri Mayankraj Bhadoria
                 </div>
                 <div className="mt-1 text-[11px] tracking-[0.18em] uppercase" style={{ ...MONO, color: T.gold100, opacity: 0.7 }}>
                   Chairman · Amaltas Group
@@ -157,7 +157,7 @@ export default function ChairmanMessageSection() {
                 className="mt-5 text-[17px] leading-relaxed max-w-xl"
                 style={{ color: `${T.cream50}AA`, ...slide(heroInView, 0.2) }}
               >
-                Shri Mayankraj S. Bhadoria on the Amaltas Group's founding principles,
+                Shri Mayankraj Bhadoria on the Amaltas Group's founding principles,
                 its commitment to the communities of Dewas and Ujjain, and what he expects
                 of every student who walks through these doors.
               </p>
@@ -198,7 +198,7 @@ export default function ChairmanMessageSection() {
                 >
                   <img
                     src="/leadership/chairman.jpg"
-                    alt="Shri Mayankraj S. Bhadoria, Chairman"
+                    alt="Shri Mayankraj Bhadoria, Chairman"
                     style={{
                       width: '100%', height: '100%',
                       objectFit: 'cover', objectPosition: 'center top',
@@ -218,7 +218,7 @@ export default function ChairmanMessageSection() {
                     }}
                   >
                     <div className="text-[16px] font-semibold" style={{ ...fontDisplay, color: '#FFFFFF', marginBottom: 2 }}>
-                      Shri Mayankraj S. Bhadoria
+                      Shri Mayankraj Bhadoria
                     </div>
                     <div style={{ ...MONO, fontSize: 10, letterSpacing: '0.18em', color: T.gold100, textTransform: 'uppercase', opacity: 0.85 }}>
                       Chairman · Amaltas Group
@@ -281,7 +281,7 @@ export default function ChairmanMessageSection() {
                           {PULL_QUOTE}
                         </p>
                         <div className="mt-3 text-[11px] tracking-[0.18em] uppercase" style={{ ...MONO, color: `${T.gold100}88` }}>
-                          — Shri Mayankraj S. Bhadoria, Chairman
+                          — Shri Mayankraj Bhadoria, Chairman
                         </div>
                       </div>
                     </div>
@@ -302,7 +302,7 @@ export default function ChairmanMessageSection() {
                   className="text-[28px] sm:text-[34px] leading-tight font-semibold"
                   style={{ ...fontDisplay, color: T.forest800, fontStyle: 'italic' }}
                 >
-                  Mayankraj S. Bhadoria
+                  Mayankraj Bhadoria
                 </div>
                 <div className="mt-2 space-y-0.5">
                   <div className="text-[13px] font-semibold tracking-wide" style={{ color: T.ink900 }}>
@@ -350,7 +350,7 @@ export default function ChairmanMessageSection() {
             . I look forward to watching each of you succeed — and to building, together, a legacy this institution will be proud of."
           </h2>
           <p className="mt-6 text-[14px] tracking-[0.14em] uppercase" style={{ ...MONO, color: `${T.cream50}55` }}>
-            — Shri Mayankraj S. Bhadoria, Chairman
+            — Shri Mayankraj Bhadoria, Chairman
           </p>
 
           <div className="mt-12 flex items-center justify-center gap-10 sm:gap-16">

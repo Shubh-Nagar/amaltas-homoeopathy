@@ -9,7 +9,7 @@ export const NAV = [
     children: [
       { label: 'About the Institution', href: '/about/institution' },
       { label: 'Vision & Mission',      href: '/about/vision-mission' },
-      { label: "Founder's Message",      href: '/about/founder-message' },
+      { label: 'Founder Chairman Message',      href: '/about/founder-message' },
       { label: "Chairman's Message",    href: '/about/chairman-message' },
       { label: "Principal's Message",   href: '/about/principal-message' },
       { label: 'Awards & Achievements',        href: '/about/awards' },
@@ -99,7 +99,7 @@ export const LEADERSHIP = [
   {
     id: 'director',
     name: 'Shri Suresh Singh Bhadoria',
-    role: 'Founder',
+    role: 'Founder Chairman',
     image: '/leadership/suresh-sir.jpeg',
     href: '/about/founder-message',
     blurb:
@@ -109,7 +109,7 @@ export const LEADERSHIP = [
   },
    {
     id: 'chairman',
-    name: 'Shri Mayankraj S. Bhadoria',
+    name: 'Shri Mayankraj Bhadoria',
     role: 'Chairman',
     image: '/leadership/chairman.jpg',
     href: '/about/chairman-message',

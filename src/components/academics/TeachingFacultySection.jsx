@@ -79,7 +79,8 @@ const STATS = [
   { value: '41', label: 'Faculty Members' },
   { value: '12', label: 'Professors' },
   { value: '9',  label: 'Associate Professors' },
-  { value: '12', label: 'Departments' },
+  { value: '19', label: 'Assistant Professors' },
+  { value: '13', label: 'Departments' },
 ];
 
 const slide = (inView, delay = 0) => ({
@@ -163,7 +164,7 @@ export default function TeachingFacultySection() {
       {/* ═══════════════════════  STATS STRIP  ═══════════════════════ */}
       <section className="py-12" style={{ background: T.gold700 }}>
         <Container>
-          <div ref={statsRef} className="grid grid-cols-2 lg:grid-cols-4 gap-6 text-center">
+          <div ref={statsRef} className="grid grid-cols-2 lg:grid-cols-5 gap-6 text-center">
             {STATS.map(({ value, label }, i) => (
               <div
                 key={label}

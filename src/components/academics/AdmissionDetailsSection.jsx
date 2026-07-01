@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import {
   GraduationCap, ClipboardList, UserCheck, FileCheck,
   BookOpen, Percent, CalendarCheck,
-  FileText, Download, ExternalLink, AlertCircle, Info,
+  FileText, ExternalLink, AlertCircle, Info,
 } from 'lucide-react';
 import { T, fontDisplay, fontBody } from '../../styles/tokens';
 import Container from '../ui/Container';
@@ -52,6 +52,7 @@ const DOCUMENTS = [
   { label: 'Passport-size Photographs', note: '6 recent colour photographs' },
   { label: 'Domicile / Residence Proof', note: 'For state quota seats' },
   { label: 'Aadhar Card', note: 'Original + 1 copy' },
+  { label: 'Samagra ID', note: 'Original + 1 copy' },
 ];
 
 
@@ -285,21 +286,6 @@ export default function AdmissionDetailsSection() {
                   <ExternalLink size={14} strokeWidth={2} />
                   Open in new tab
                 </a>
-                <a
-                  href={PDF_URL}
-                  download="Annexure_19_Eligibility_Criteria_Amaltas.pdf"
-                  className="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl text-[13px] font-semibold transition-all duration-200"
-                  style={{
-                    background: T.forest800,
-                    color: T.cream50,
-                    textDecoration: 'none',
-                  }}
-                  onMouseEnter={e => { e.currentTarget.style.background = T.forest600; }}
-                  onMouseLeave={e => { e.currentTarget.style.background = T.forest800; }}
-                >
-                  <Download size={14} strokeWidth={2.2} />
-                  Download PDF
-                </a>
               </div>
             </div>
 
@@ -355,15 +341,6 @@ export default function AdmissionDetailsSection() {
                       >
                         <ExternalLink size={14} />
                         Open in new tab
-                      </a>
-                      <a
-                        href={PDF_URL}
-                        download="Annexure_19_Eligibility_Criteria_Amaltas.pdf"
-                        className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl text-[13px] font-semibold"
-                        style={{ background: T.forest800, color: T.cream50, textDecoration: 'none' }}
-                      >
-                        <Download size={14} />
-                        Download PDF
                       </a>
                     </div>
                   </div>

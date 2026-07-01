@@ -511,19 +511,19 @@ export default function HospitalDepartmentsSection() {
             <Hospital size={22} strokeWidth={1.6} style={{ color: T.gold100 }} />
           </div>
           <p
-            className="text-[22px] sm:text-[28px] font-semibold max-w-2xl mx-auto leading-snug"
+            className="text-[22px] sm:text-[28px] font-semibold max-w-2xl mx-auto leading-[1.5] pb-10"
             style={{ ...fontDisplay, color: '#FFFFFF' }}
           >
             Ten departments.{' '}
             <em style={{ color: T.gold100, fontStyle: 'italic' }}>One commitment</em>
             {' '}— your complete recovery.
           </p>
-          <p
+          {/* <p
             className="mt-4 text-[14px] leading-relaxed max-w-xl mx-auto"
             style={{ color: `${T.cream50}77` }}
           >
             Amaltas Teaching Hospital — serving patients across Dewas and Ujjain every day.
-          </p>
+          </p> */}
         </Container>
       </section>
     </>

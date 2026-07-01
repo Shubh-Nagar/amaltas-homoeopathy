@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import {
-  Award, BookOpen, Users, BadgeCheck,
+  Award, BookOpen, Users,
   FileText, ExternalLink,
   AlertCircle, ChevronDown, ChevronUp, Info,
 } from 'lucide-react';
@@ -14,13 +14,6 @@ const PDF_URL = '/documents/Annexure%2023%20Scholarship%20Rules%20and%20Regulati
 
 const SCHOLARSHIP_TYPES = [
   {
-    icon: Award,
-    title: 'Merit Scholarship',
-    desc: 'Awarded to students who secure outstanding marks in the NEET entrance examination or achieve distinction in annual university examinations.',
-    accent: T.gold700,
-    badge: 'Merit-Based',
-  },
-  {
     icon: Users,
     title: 'Need-Based Scholarship',
     desc: 'Financial assistance provided to economically weaker section (EWS) students who demonstrate genuine financial need along with satisfactory academic performance.',
@@ -33,13 +26,6 @@ const SCHOLARSHIP_TYPES = [
     desc: 'Students belonging to SC / ST / OBC and other reserved categories are eligible for state and central government scholarship schemes as applicable.',
     accent: '#2E6A8A',
     badge: 'Government',
-  },
-  {
-    icon: BadgeCheck,
-    title: 'Institutional Concession',
-    desc: 'Special fee concessions granted by the institution to meritorious and deserving students based on a review by the scholarship committee.',
-    accent: '#8A4A6E',
-    badge: 'Institutional',
   },
 ];
 
@@ -132,9 +118,8 @@ export default function ScholarshipSection() {
               className="mt-5 text-[16px] leading-relaxed max-w-2xl mx-auto"
               style={{ color: `${T.cream50}BB`, ...slide(heroInView, 0.2) }}
             >
-              Amaltas Institute of Homoeopathy offers a range of scholarships and
-              concessions to support meritorious and financially deserving students
-              in pursuing their BHMS programme.
+              Amaltas Institute of Homoeopathy offers a range of scholarships 
+               in pursuing their BHMS programme.
             </p>
             <div
               className="mt-7 flex items-center justify-center gap-2 text-[11px] tracking-[0.18em] uppercase"
@@ -164,11 +149,11 @@ export default function ScholarshipSection() {
             </h2>
             <p className="mt-3 text-[15px] leading-relaxed max-w-xl mx-auto" style={{ color: T.muted500 }}>
               Multiple pathways exist for students to access financial assistance —
-              merit-based, need-based, government-sponsored, and institutional.
+              need-based and government-sponsored.
             </p>
           </div>
 
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
+          <div className="grid sm:grid-cols-2 gap-5 max-w-3xl mx-auto">
             {SCHOLARSHIP_TYPES.map(({ icon: Icon, title, desc, accent, badge }, i) => (
               <div
                 key={title}
@@ -350,7 +335,7 @@ export default function ScholarshipSection() {
         </Container>
       </section>
 
-      {/* ═══════════════════════  PDF SECTION  ═══════════════════════ */}
+      {/* ═══════════════════════  PDF SECTION (commented out)  ═══════════════════════
       <section className="py-20 lg:py-28" style={{ background: T.cream50 }}>
         <Container>
           <div ref={pdfRef}>
@@ -471,6 +456,7 @@ export default function ScholarshipSection() {
           </div>
         </Container>
       </section>
+      */}
 
       {/* ═════════════════════  CLOSING STRIP  ════════════════════════ */}
       <section className="py-16 relative overflow-hidden" style={{ background: T.forest800 }}>

@@ -89,6 +89,12 @@ const DOCUMENTS = [
     note: 'Applicant & guardian',
     required: 'Photocopy · Self-attested',
   },
+  {
+    icon: FileText,
+    label: 'Samagra ID',
+    note: 'Applicant',
+    required: 'Photocopy · Self-attested',
+  },
 ];
 
 const slide = (inView, delay = 0, dir = 'up') => ({

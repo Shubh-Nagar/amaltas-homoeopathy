@@ -125,14 +125,14 @@ export default function FounderMessageSection() {
                 className="mt-5 text-[38px] sm:text-[50px] lg:text-[62px] leading-[1.06] tracking-tight font-semibold"
                 style={{ ...fontDisplay, color: '#FFFFFF', ...slide(heroInView, 0.1) }}
               >
-                Founder's{' '}
+                Founder Chairman{' '}
                 <em style={{ color: T.gold100, fontStyle: 'italic' }}>Message</em>
               </h1>
               <p
                 className="mt-5 text-[17px] leading-relaxed max-w-xl"
                 style={{ color: `${T.cream50}AA`, ...slide(heroInView, 0.2) }}
               >
-                A personal note from the man who built Amaltas from the ground up —
+                A personal note from the man who built Amaltas Group from the ground up —
                 on purpose, on medicine, and on the responsibility every physician carries.
               </p>
               {/* Breadcrumb */}
@@ -144,7 +144,7 @@ export default function FounderMessageSection() {
                 <span style={{ color: T.gold600 }}>›</span>
                 <span>About</span>
                 <span style={{ color: T.gold600 }}>›</span>
-                <span style={{ color: T.gold100 }}>Founder's Message</span>
+                <span style={{ color: T.gold100 }}>Founder Chairman Message</span>
               </div>
             </div>
 
@@ -180,7 +180,7 @@ export default function FounderMessageSection() {
                   className="mt-1 text-[11px] tracking-[0.18em] uppercase"
                   style={{ ...MONO, color: T.gold100, opacity: 0.7 }}
                 >
-                  Founder · Amaltas Institute
+                  Founder Chairman · Amaltas Group of Institute
                 </div>
               </div>
             </div>
@@ -210,7 +210,7 @@ export default function FounderMessageSection() {
                 >
                   <img
                     src="/leadership/suresh-sir.jpeg"
-                    alt="Shri Suresh Singh Bhadoria, Founder"
+                    alt="Shri Suresh Singh Bhadoria, Founder Chairman"
                     style={{
                       width: '100%', height: '100%',
                       objectFit: 'cover', objectPosition: 'center top',
@@ -239,7 +239,7 @@ export default function FounderMessageSection() {
                     <div
                       style={{ ...MONO, fontSize: 10, letterSpacing: '0.18em', color: T.gold100, textTransform: 'uppercase', opacity: 0.85 }}
                     >
-                      Founder · Amaltas Institute
+                      Founder Chairman · Amaltas Institute
                     </div>
                   </div>
                 </div>
@@ -321,7 +321,7 @@ export default function FounderMessageSection() {
                           className="mt-3 text-[11px] tracking-[0.18em] uppercase"
                           style={{ ...MONO, color: `${T.gold100}88` }}
                         >
-                          — Shri Suresh Singh Bhadoria, Founder
+                          — Shri Suresh Singh Bhadoria, Founder Chairman
                         </div>
                       </div>
                     </div>
@@ -362,7 +362,7 @@ export default function FounderMessageSection() {
                     className="text-[13px] font-semibold tracking-wide"
                     style={{ color: T.ink900 }}
                   >
-                    Founder
+                    Founder Chairman
                   </div>
                   <div
                     className="text-[13px]"
@@ -420,7 +420,7 @@ export default function FounderMessageSection() {
             className="mt-6 text-[14px] tracking-[0.14em] uppercase"
             style={{ ...MONO, color: `${T.cream50}66` }}
           >
-            — Shri Suresh Singh Bhadoria, Founder
+            — Shri Suresh Singh Bhadoria, Founder Chairman
           </p>
 
           <div
